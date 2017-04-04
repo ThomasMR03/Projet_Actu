@@ -23,8 +23,8 @@ class SujetTable extends Table
 	public function find($id)
 	{
 		return $this->query(" SELECT forumMessage.id,
-								 forumMessage.message,
-								 forumMessage.sujet_id,
+								  	forumMessage.message,
+								 	forumMessage.sujet_id,
 									forumSujet.titre
 								FROM forumMessage
 								LEFT JOIN forumSujet
@@ -36,8 +36,8 @@ class SujetTable extends Table
 	public function lastBySujet($category_id, $one=false)
 	{
 		return $this->query(" SELECT forumSujet.id,
-								 forumSujet.titre,
-									categories.titre as sujet
+								 	 forumSujet.titre,
+									 categories.titre as sujet
 								FROM forumSujet
 								LEFT JOIN categories
 									ON category_id = categories.id
