@@ -3,10 +3,10 @@
 <table class="table">
 	<thead>
 		<tr>
-			<td>TITRE CATEGORIE</td>
-			<td>AUTEUR DE L'ARTICLE</td>
-			<td>DATE</td>
-			<td>NOMBRE(S) D'ARTICLE(S)</td>
+			<td>FORUM</td>
+			<td>SUJETS</td>
+			<td>MESSAGES</td>
+			<td>DERNIERS MESSAGES</td>
 		</tr>
 	</thead>
 	<tbody>
@@ -15,8 +15,6 @@
 			?>
 		<tr>
 			<td><a id="categorie_titre" href="<?= $categorie->Url; ?>"><?= $categorie->titre; ?></a></td>
-			<td><?= $category->auteur?></td>
-			<td><?= $category->date_creation;?></td>
 			<td><?= $category->category ?></td>
 		<?php endforeach; }?>
 		</tr>
