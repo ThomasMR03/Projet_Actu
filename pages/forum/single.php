@@ -1,14 +1,14 @@
 <?php
 	$app = App::getInstance();
-	$post = $app->getTable('sujet')->find($_GET['id']);
-	if ($post===false) {
+	$message = $app->getTable('sujet')->find($_GET['id']);
+	if ($message===false) {
 		$app->notFound();
 	}
-	$app->titre = $post->titre;
+	$app->titre = $message->titre;
 ?>
 <div class="col-md-8">
-	<h1 id="grostitre_article"><?= $post->titre; ?></h1>
-	<p><?= $post->message; ?></p>
+	<h1 id="grostitre_article"><?= $message->titre; ?></h1>
+	<p><?= $message->message; ?></p>
 </div>
 <div class="col-md-4">
 	

@@ -33,7 +33,7 @@ elseif ($page==='forum') {
 	require ROOT.'/pages/forum/index.php';
 }elseif ($page==='forum.category') {
 	require ROOT.'/pages/forum/category.php';
-}elseif ($page==='posts.single') {
+}elseif ($page==='forum.single') {
 	require ROOT.'/pages/forum/single.php';
 }
 

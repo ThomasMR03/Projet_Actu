@@ -20,7 +20,7 @@ class SujetTable extends Table
 							", [$id]);
 	}
 
-		public function find($id)
+	public function find($id)
 	{
 		return $this->query(" SELECT forumMessage.id,
 								 forumMessage.message,
