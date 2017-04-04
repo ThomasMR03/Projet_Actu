@@ -1,5 +1,5 @@
 <div class="row">
-	<div class="col-md-9">
+	<div class="col-md-12">
 <table class="table">
 	<thead>
 		<tr>
@@ -20,18 +20,5 @@
 		</tr>
 	</tbody>
 </table>
-</div>
-<div class="col-md-1">
-	
-</div>
-	<div class="col-md-2" id="categorie">
-	<h4>Les catégories :</h4>
-		<ul>
-			<?php foreach (App::getInstance()->getTable('category')->all() as $categorie) : ?>
-
-				<li><a id="categorie_titre" href="<?= $categorie->Url; ?>"><?= $categorie->titre; ?></a></li>
-		<?php endforeach; ?>
-		</ul>
 	</div>
-</div>
 </div>
