@@ -2,11 +2,11 @@
 $app = App::getInstance();
 
 
-$categorie = $app->getTable('category')->find($_GET['id']);
-if ($categorie===false){
+$sujet = $app->getTable('sujet')->find($_GET['id']);
+if ($sujet===false){
 	$app->notFound();
 }
-$articles = $app->getTable('post')->lastByCategory($_GET['id']);
+$sujets = $app->getTable('sujet')->lastBySujet($_GET['id']);
 $categories = $app->getTable('category')->all();
 ?>
 
@@ -18,19 +18,15 @@ $categories = $app->getTable('category')->all();
 
 	<thead>
 		<tr>
-			<td>LAST ARTICLE</td>
-			<td>EXTRAIT</td>
-			<td>DATE / TIME</td>
+			<td>SUJETS</td>
+			<td>MESSAGES</td>
 			<td>AUTEUR</td>
 		</tr>
 	</thead>
 	<tbody>
-	<?php foreach ($articles as $post) : ?>
+	<?php foreach ($sujets as $post) : ?>
 		<tr">
-			<td><a href="<?= $post->Url; ?>"> <?= $post->titre;?> </a></td>
-			<td><?=$post->Extrait;?></td>
-			<td><?= $post->date_creation;?></td>
-			<td><?= $post->auteur;?></td>
+			<td><a href=""> <?= $post->titre;?> </a></td>
 		</tr>
 		<?php endforeach; ?>
 	</tbody>
@@ -39,12 +35,7 @@ $categories = $app->getTable('category')->all();
 	<div class="col-md-2">
 		
 	</div>
-	<div class="col-md-2" id="categorie">
-	<h4>Les catégories :</h4>
-		<ul>
-		<?php foreach ($categories as $categorie) : ?>
-			<li><a id="categorie_titre" href="<?= $categorie->Url; ?>"><?= $categorie->titre; ?></a></li>
-		<?php endforeach; ?>
-		</ul>
+	<div class="col-md-2">
+	
 	</div>
 </div>
