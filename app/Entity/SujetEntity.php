@@ -9,7 +9,7 @@ class SujetEntity extends Entity
 {
 	public function getUrl()
 	{
-		return 'index.php?p=posts.single&id='.$this->id;
+		return 'index.php?p=forum.single&id='.$this->id;
 	}
 
 }

@@ -2,11 +2,11 @@
 $app = App::getInstance();
 
 
-$sujet = $app->getTable('sujet')->find($_GET['id']);
-if ($sujet===false){
+$categorie = $app->getTable('category')->find($_GET['id']);
+if ($categorie===false){
 	$app->notFound();
 }
-$sujets = $app->getTable('sujet')->lastBySujet($_GET['id']);
+$sujet = $app->getTable('sujet')->lastBySujet($_GET['id']);
 $categories = $app->getTable('category')->all();
 ?>
 
@@ -18,15 +18,14 @@ $categories = $app->getTable('category')->all();
 
 	<thead>
 		<tr>
-			<td>SUJETS</td>
+			<td>SUJET</td>
 			<td>MESSAGES</td>
-			<td>AUTEUR</td>
 		</tr>
 	</thead>
 	<tbody>
-	<?php foreach ($sujets as $post) : ?>
+	<?php foreach ($sujet as $post) : ?>
 		<tr">
-			<td><a href=""> <?= $post->titre;?> </a></td>
+			<td><a href="<?= $post->Url; ?>"> <?= $post->titre;?> </a></td>
 		</tr>
 		<?php endforeach; ?>
 	</tbody>
@@ -35,7 +34,12 @@ $categories = $app->getTable('category')->all();
 	<div class="col-md-2">
 		
 	</div>
-	<div class="col-md-2">
-	
+	<div class="col-md-2" id="categorie">
+	<h4>Les catégories :</h4>
+		<ul>
+		<?php foreach ($categories as $categorie) : ?>
+			<li><a id="categorie_titre" href="<?= $categorie->Url; ?>"><?= $categorie->titre; ?></a></li>
+		<?php endforeach; ?>
+		</ul>
 	</div>
 </div>
