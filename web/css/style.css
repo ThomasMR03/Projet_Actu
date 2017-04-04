@@ -1,0 +1,103 @@
+body{background: rgb(112, 87, 50);
+margin: 0; padding: 0;}
+
+/* CSS LOG */
+
+#titre_log{
+	text-align: center;
+	font-family: 'Indie Flower', cursive;
+}
+
+/* //////////////////////////////////////////////////////////////////////////////////////////////// */
+.header{ // Div image entete site //
+	width: 100%;
+	height: 450px;
+	background-image: url(../img/header.png);
+	background-size: 100% 110%;
+}
+
+#nav{
+	background:#818B27;
+	width: 100%;
+	font-size: 1.5em;
+	text-decoration: none;
+	color: white;
+	padding-top: 8px;
+}
+#nav a{
+	text-decoration: none;
+	color: white;
+}
+
+
+/*Page Home*/
+
+#categorie {
+	border: 2px solid black;
+	border-radius: 10px;
+}
+
+#categorie_titre {
+	color: #BB0B0B;
+}
+
+/* Page cat */
+
+#grostitre_cat {
+	border-left: 2px solid black;
+	border-bottom-left-radius: 10px;
+	border-bottom: 2px solid black;
+	color: #BB0B0B;
+	font-family: 'Indie Flower', cursive;
+}
+
+#grostitre_article {
+	border-left: 2px solid black;
+	border-bottom-left-radius: 10px;
+	border-bottom: 2px solid black;
+	color: #BB0B0B;
+	font-family: 'Indie Flower', cursive;
+}
+
+
+/* CSS Admin */
+
+#titre_admin {
+	text-align: center;
+	border: 2px solid black;
+	color: #BB0B0B;
+	font-family: 'Indie Flower', cursive;
+}
+
+#add_article {
+	font-family: 'Indie Flower', cursive;
+}
+
+#post {
+	font-family: 'Indie Flower', cursive;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+#btn_admin {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#hello_admin {
+	color: #BB0B0B;
+	font-family: 'Indie Flower', cursive;
+}
+
+#add_cat {
+	font-family: 'Indie Flower', cursive;
+}
+
+#modif_article {
+	font-family: 'Indie Flower', cursive;
+}
+
+#modif_cat {
+	font-family: 'Indie Flower', cursive;
+}
