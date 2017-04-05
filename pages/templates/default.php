@@ -38,7 +38,6 @@ $date = date("d-m-Y");
   <div class="container">
     <div class="row">
       <a href="index.php" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 liens">Accueil</a>
-      <a href="index.php?p=forum" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 liens">Forum</a>
     </div>
   </div>
 </div>
@@ -48,7 +47,7 @@ $date = date("d-m-Y");
   <div class="container" style="width: 100%;">
     <div class="col-md-1"></div>
     <div class="col-md-1 accueil"><a href="index.php">Accueil</a></div>
-     <div class="col-md-1 forum"><a class="col-md-1" href="index.php?p=forum">Forum</a></div>
+     <div class="col-md-1"></div>
     <div class="col-md-3"></div>
     <div class="col-md-2 admin-panel"><a href="admin.php"><span class="glyphicon glyphicon-lock"></span> Panel Admin</a></div>
     <?php if(isset($_SESSION['Auth'])): ?> <!-- Si connecté affiche Bonjour Pseudo, sinon affiche Visiteur -->
