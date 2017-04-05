@@ -19,5 +19,9 @@
 	<div class="col-md-1"></div>
 	<div class="col-md-2" id="colonneGauche">
 		<h3>Articles récents</h3>
+		<?php foreach (App::getInstance()->getTable('post')->lastRecent() as $post) : ?>
+			<h5><a href="<?= $post->Url ?>"> <?= $post->titre ?> </a></h5>
+			<p>Article posté par <?= $post->auteur ?> le <?= $post->date_creation ?></p>
+		<?php endforeach; ?>
 	</div>
 </div>
