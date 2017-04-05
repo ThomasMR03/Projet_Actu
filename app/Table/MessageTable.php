@@ -11,15 +11,15 @@ class MessageTable extends Table
 
 	public function lastByMessage($category_id, $one=false)
 	{
-		return $this->query(" SELECT forumMessage.id,
-								 	 forumMessage.message,
-									 forumSujet.titre as sujet
-								FROM forumMessage
-								LEFT JOIN forumSujet
-									ON sujet_id = forumSujet.id
-								WHERE forumSujet.id = ?
-								ORDER BY forumMessage.id DESC
+		return $this->query(" SELECT messages.id,
+								 	 messages.message,
+								 	 messages.sujet_id,
+									 sujets.titre as sujet
+								FROM messages
+								LEFT JOIN sujets
+									ON sujet_id = sujets.id
+								WHERE sujets.id = ?
+								ORDER BY messages.id DESC
 							", [$category_id], $one);
 	}
-
 }
