@@ -10,7 +10,7 @@
 			<div class="imageArticle"><img src="img/news.jpg"></div>
 			<div class="contenuArticle">
 			<h2><a href="<?= $post->Url ?>"> <?= $post->titre ?> </a></h2>
-			<h4>Article posté par <?= $post->auteur ?> le <?= $post->date_creation ?></h4>
+			<h4>Article posté par <?= $post->auteur ?> le <?= $post->date_creation_fr ?></h4>
 			<p><?= $post->contenu ?></p>
 			</div>
 			</div>
@@ -24,7 +24,7 @@
 			<div class="fondRecent">
 				<h5><a href="<?= $post->Url ?>"> <?= $post->titre ?> </a></h5>
 				<div class="imageArticleRecent"><img src="img/news.jpg"></div>
-				<p>Article posté par <?= $post->auteur ?> <br> Le <?= $post->date_creation ?></p>
+				<p>Article posté par <?= $post->auteur ?> <br> Le <?= $post->date_creation_fr ?></p>
 			</div>
 		<?php endforeach; ?>
 	</div>
