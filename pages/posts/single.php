@@ -1,9 +1,26 @@
 <?php
+
+	if ($_POST) {
+		if (!empty($_POST['commentaire'] && $_POST['articles_id'])) {
+			$req = $app->getTable('commentaire')->create(
+				["commentaire"=>$_POST['commentaire'],
+				"articles_id"=>$_POST['articles_id']
+				]);
+			if ($req) {
+				////message Flash
+				header('location: index.php')
+				?>
+				<div class="alert alert-success">Bien enregistré</div>
+				<?php
+			}
+		}
+	}
 	$app = App::getInstance();
 	$post = $app->getTable('post')->find($_GET['id']);
 	if ($post===false) {
 		$app->notFound();
 	}
+	$lastCom = $app->getTable('commentaire')->lastByCommentaire($_GET['id']);
 	$app->titre = $post->titre;
 ?>
 
@@ -32,3 +49,17 @@
 			</div>
 		<?php endforeach; ?>
 	</div>
+
+	<?php foreach ($lastCom as $last) : ?>
+		<h4>Commentaire(s) :</h4>
+	<p><?= $last->commentaire ?></p>
+	<?php endforeach; ?>
+
+<div class="col-md-8">
+<h2 id="add_article">Ajouter un commentaire</h2>
+<form method="post" action="">
+	<textarea class="form-control" name="commentaire" placeholder="Ajouter votre commentaire" ></textarea>
+	<input type="radio" name="articles_id" id="optionsRadios1" value="<?= $_GET['id'] ?>"> 
+	<input class="btn btn-warning" type="submit" name="">
+</form>
+</div>
