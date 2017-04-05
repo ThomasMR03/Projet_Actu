@@ -6,7 +6,7 @@ $categorie = $app->getTable('category')->find($_GET['id']);
 if ($categorie===false){
 	$app->notFound();
 }
-$articles = $app->getTable('post')->lastByCategory($_GET['id']);
+$sujet = $app->getTable('sujet')->lastBySujet($_GET['id']);
 $categories = $app->getTable('category')->all();
 ?>
 
@@ -18,19 +18,14 @@ $categories = $app->getTable('category')->all();
 
 	<thead>
 		<tr>
-			<td>LAST ARTICLE</td>
-			<td>EXTRAIT</td>
-			<td>DATE / TIME</td>
-			<td>AUTEUR</td>
+			<td>SUJET</td>
+			<td>MESSAGES</td>
 		</tr>
 	</thead>
 	<tbody>
-	<?php foreach ($articles as $post) : ?>
+	<?php foreach ($sujet as $post) : ?>
 		<tr">
 			<td><a href="<?= $post->Url; ?>"> <?= $post->titre;?> </a></td>
-			<td><?=$post->Extrait;?></td>
-			<td><?= $post->date_creation;?></td>
-			<td><?= $post->auteur;?></td>
 		</tr>
 		<?php endforeach; ?>
 	</tbody>
