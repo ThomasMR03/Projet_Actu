@@ -3,8 +3,8 @@
 	$message = $app->getTable('sujet')->find($_GET['id']);
 	if ($message===false) {
 		$app->notFound();
-	$lastMessage = $app->getTable('message')->lastByMessage($_GET['id']);
 	}
+	$lastMessage = $app->getTable('message')->lastByMessage($_GET['id']);
 	$app->titre = $message->titre;
 ?>
 
