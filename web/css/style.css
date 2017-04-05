@@ -8,16 +8,50 @@ margin: 0; padding: 0;}
 
 #titre_log{
 	text-align: center;
-	font-family: 'Indie Flower', cursive;
 }
 
 /* //////////////////////////////////////////////////////////////////////////////////////////////// */
 .header{ // Div image entete site //
 	width: 100%;
-	height: 450px;
+	height: 350px;
 	background:transparent;
 	background-size: 100% 110%;
 }
+
+
+/*// NAV SUR MOBILE    CSS DEGUELASSE //*/
+#mobileButton{visibility: hidden;}
+#mobileNav{visibility: hidden; width: 0;}
+.liens{font-size: 1.5em; color: white;}
+.cache{animation-name: pageMobileHidden; animation-duration: .7s; animation-fill-mode: forwards;}
+.visible{animation-name: pageMobile; animation-duration: .7s; animation-fill-mode: forwards;}
+
+
+@media screen and (max-width: 768px){
+@keyframes pageMobile{
+	0%{width: 0%;}
+	100%{width: 60%}
+}
+@keyframes pageMobileHidden{
+	0%{width: 60%;}
+	100%{width: 0%}
+}
+#mobileNav{position:absolute; width:100%; height: 50px; background-color: rgba(0,0,0,0.7);top: 0px; left: 0px; color: white; visibility: visible; padding: 0; margin:0; font-size: 18px; }
+#mobileButton{position: absolute;right: 5px;color: white; height: 100%; z-index: 10001; visibility: visible; width: 80px; margin-top: -10px;}
+.mobileTxt{color: white;}
+#navmobile{position: absolute;top: 0; left: 0;height: 100%; background-color: rgba(0,0,0,1); z-index: 100; overflow: hidden; text-align: center;visibility: visible;}
+.liens{font-size: 1.5em; color: white;}
+.hidden{width: 0%;}
+.cache{animation-name: pageMobileHidden; animation-duration: .7s; animation-fill-mode: forwards;}
+.visible{animation-name: pageMobile; animation-duration: .7s; animation-fill-mode: forwards;}
+}
+@media screen and (max-width: 768px){
+	#nav{visibility: hidden;}
+	.header{height: 200px;}
+	#colonneGauche{visibility: hidden; display: none;}
+}
+/*// FIN NAV SUR MOBILE    CSS DEGUELASSE //*/
+
 
 #nav{
 	position: fixed;
@@ -30,17 +64,17 @@ margin: 0; padding: 0;}
 	color: white;
 	border-top:4px solid  rgb(113, 70, 38);
 	margin: 0; padding: 0;
+	font-family: 'Oxygen', sans-serif;
 }
 #nav a{
 	text-decoration: none;
 	color: white;
-	font-family: 'Indie Flower', cursive;
+	font-family: 'Oxygen', sans-serif;
 }
 #nav .pseudo{
 	height: 40px;
 	padding-top: 5px;
 	text-align: center;
-	font-family: 'Indie Flower', cursive;
 }
 #nav .inscription{
 	background: rgb(113, 70, 38);
@@ -171,13 +205,13 @@ margin: 0; padding: 0;}
 	
 	background-size: 100% 100%;
 	padding: 10px;
-	margin-top: 30px;
+	margin-top: 20px;
 	}
 #article h2{
 	text-align: center;
 	margin-top: 0;
 	font-family: 'Ubuntu Mono', monospace;
-	font-size: 2.8em;
+	font-size: 2em;
 	margin-bottom: -12px;
 }
 #article h2 a{
@@ -197,7 +231,7 @@ margin: 0; padding: 0;}
 }
 .imageArticle{
 	width: 100%;
-	height: 250px;
+	height: 170px;
 	overflow: hidden;
 	margin-bottom: 0;
 }
@@ -214,3 +248,9 @@ margin: 0; padding: 0;}
 	max-height: 200px;
 	border-top:6px solid  rgb(199,211,29);
 }
+
+#colonneGauche{background-color: rgba(0,0,0,0.7); height: 400px; color: white; text-align: center;}
+
+
+
+footer{width: 100%; height: 200px; margin-top: 50px; background-color: rgba(0,0,0,0.7);}
