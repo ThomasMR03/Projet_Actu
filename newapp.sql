@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Mer 05 Avril 2017 à 09:21
+-- Généré le :  Mer 05 Avril 2017 à 15:54
 -- Version du serveur :  10.1.19-MariaDB
 -- Version de PHP :  7.0.9
 
@@ -72,42 +72,54 @@ INSERT INTO `categories` (`id`, `titre`, `messageCat`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `forumMessage`
+-- Structure de la table `membreRang`
 --
 
-CREATE TABLE `forumMessage` (
+CREATE TABLE `membreRang` (
+  `id` int(11) NOT NULL,
+  `membre_rang` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `membreRang`
+--
+
+INSERT INTO `membreRang` (`id`, `membre_rang`) VALUES
+(1, 'visiteur'),
+(2, 'inscrit'),
+(3, 'modo'),
+(4, 'admin');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `messages`
+--
+
+CREATE TABLE `messages` (
   `id` int(11) NOT NULL,
   `message` text NOT NULL,
   `sujet_id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Contenu de la table `forumMessage`
---
-
-INSERT INTO `forumMessage` (`id`, `message`, `sujet_id`, `category_id`) VALUES
-(1, 'Bonjour', 1, 1),
-(2, 'Hello', 2, 0),
-(3, 'Hello 2', 2, 0);
-
 -- --------------------------------------------------------
 
 --
--- Structure de la table `forumSujet`
+-- Structure de la table `sujets`
 --
 
-CREATE TABLE `forumSujet` (
+CREATE TABLE `sujets` (
   `id` int(11) NOT NULL,
   `titre` varchar(25) NOT NULL,
   `category_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `forumSujet`
+-- Contenu de la table `sujets`
 --
 
-INSERT INTO `forumSujet` (`id`, `titre`, `category_id`) VALUES
+INSERT INTO `sujets` (`id`, `titre`, `category_id`) VALUES
 (1, 'Test', 1),
 (2, 'FAQ', 1);
 
@@ -132,7 +144,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `password`, `date_de_naissance`, `membre_rang`, `message`) VALUES
 (1, 'CaptainFire03', 'c955a0060768c59720af5c02a18797717a4aeda1', '1995-10-19', 'admin', 0),
-(2, 'Seizuko', 'f8728f2c3d5b7e7529ebeadc434d5db085fa47ee', '1995-03-22', 'admin', 0);
+(2, 'Seizuko', 'f8728f2c3d5b7e7529ebeadc434d5db085fa47ee', '1995-03-22', 'admin', 0),
+(4, 'TestAdmin', '98aadb37083eddd855c27feccb15dc8c5b127fd0', '1995-10-19', 'inscrit', 0);
 
 --
 -- Index pour les tables exportées
@@ -151,15 +164,21 @@ ALTER TABLE `categories`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `forumMessage`
+-- Index pour la table `membreRang`
 --
-ALTER TABLE `forumMessage`
+ALTER TABLE `membreRang`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `forumSujet`
+-- Index pour la table `messages`
 --
-ALTER TABLE `forumSujet`
+ALTER TABLE `messages`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `sujets`
+--
+ALTER TABLE `sujets`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -183,20 +202,25 @@ ALTER TABLE `articles`
 ALTER TABLE `categories`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
--- AUTO_INCREMENT pour la table `forumMessage`
+-- AUTO_INCREMENT pour la table `membreRang`
 --
-ALTER TABLE `forumMessage`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+ALTER TABLE `membreRang`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
--- AUTO_INCREMENT pour la table `forumSujet`
+-- AUTO_INCREMENT pour la table `messages`
 --
-ALTER TABLE `forumSujet`
+ALTER TABLE `messages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT pour la table `sujets`
+--
+ALTER TABLE `sujets`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
