@@ -1,6 +1,9 @@
-body{background: rgb(112, 87, 50);
+body{background-color: #202315;
+	background-image: url(../img/header3.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
 margin: 0; padding: 0;}
-
+.container{margin:0; padding: 0;}
 /* CSS LOG */
 
 #titre_log{
@@ -12,24 +15,82 @@ margin: 0; padding: 0;}
 .header{ // Div image entete site //
 	width: 100%;
 	height: 450px;
-	background-image: url(../img/header.png);
+	background:transparent;
 	background-size: 100% 110%;
 }
 
 #nav{
-	background:#818B27;
+	position: fixed;
+	top: 0;
+	z-index: 9999;
+	background-color: rgba(199,211,29,0.7);
 	width: 100%;
-	font-size: 1.5em;
+	font-size: 1.3em;
 	text-decoration: none;
 	color: white;
-	padding-top: 8px;
+	border-top:4px solid  rgb(113, 70, 38);
+	margin: 0; padding: 0;
 }
 #nav a{
 	text-decoration: none;
 	color: white;
+	font-family: 'Indie Flower', cursive;
 }
-
-
+#nav .pseudo{
+	height: 40px;
+	padding-top: 5px;
+	text-align: center;
+	font-family: 'Indie Flower', cursive;
+}
+#nav .inscription{
+	background: rgb(113, 70, 38);
+	height: 40px;
+	padding-top: 5px;
+	text-align: center;
+	transition-duration: .5s;
+}
+#nav .inscription:hover{
+	background-color:#B06D3B; 
+}
+#nav .login{
+	background: rgb(113, 70, 38);
+	height: 40px;
+	padding-top: 5px;
+	transition-duration: .5s;
+	text-align: center;
+}
+#nav .login:hover{
+	background-color:#B06D3B; 
+}
+#nav .accueil{
+	background: rgb(113, 70, 38);
+	background-size: 100% 100%;
+	height: 40px;
+	padding-top: 5px;
+	transition-duration: .5s;
+	text-align: center;
+}
+#nav .accueil:hover{
+	background-color:#B06D3B; 
+}
+#nav .forum{
+	background: rgb(113, 70, 38);
+	background-size: 100% 100%;
+	height: 40px;
+	padding-top: 5px;
+	transition-duration: .5s;
+	text-align: center;
+}
+#nav .forum:hover{
+	background-color:#B06D3B; 
+}
+#nav .admin-panel{
+	background-size: 100% 100%;
+	height: 40px;
+	padding-top: 5px;
+	transition-duration: .5s;
+	text-align: center;
+}
 /*Page Home*/
 
 #categorie {
@@ -100,4 +161,56 @@ margin: 0; padding: 0;}
 
 #modif_cat {
 	font-family: 'Indie Flower', cursive;
+}
+
+
+
+/* Css article /*/
+
+#article{
+	
+	background-size: 100% 100%;
+	padding: 10px;
+	margin-top: 30px;
+	}
+#article h2{
+	text-align: center;
+	margin-top: 0;
+	font-family: 'Ubuntu Mono', monospace;
+	font-size: 2.8em;
+	margin-bottom: -12px;
+}
+#article h2 a{
+	color: #80BA27;
+	text-decoration: none;
+}
+#article h4{
+	color:#426A17; 
+	text-align: center;
+	font-size: 10px;
+	font-weight: normal;
+	margin-bottom: 30px;
+}
+#article p{
+	text-align: center;
+	color: black;
+}
+.imageArticle{
+	width: 100%;
+	height: 250px;
+	overflow: hidden;
+	margin-bottom: 0;
+}
+.imageArticle img{
+	width: 100%;
+	border: 1px solid  rgb(199,211,29);
+}
+.contenuArticle{
+	width: 100%;
+	background-color: white;
+	padding: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	max-height: 200px;
+	border-top:6px solid  rgb(199,211,29);
 }

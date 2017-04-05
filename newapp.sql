@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Mar 04 Avril 2017 à 15:00
+-- Généré le :  Mer 05 Avril 2017 à 09:21
 -- Version du serveur :  10.1.19-MariaDB
 -- Version de PHP :  7.0.9
 
@@ -78,8 +78,18 @@ INSERT INTO `categories` (`id`, `titre`, `messageCat`) VALUES
 CREATE TABLE `forumMessage` (
   `id` int(11) NOT NULL,
   `message` text NOT NULL,
+  `sujet_id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `forumMessage`
+--
+
+INSERT INTO `forumMessage` (`id`, `message`, `sujet_id`, `category_id`) VALUES
+(1, 'Bonjour', 1, 1),
+(2, 'Hello', 2, 0),
+(3, 'Hello 2', 2, 0);
 
 -- --------------------------------------------------------
 
@@ -98,7 +108,8 @@ CREATE TABLE `forumSujet` (
 --
 
 INSERT INTO `forumSujet` (`id`, `titre`, `category_id`) VALUES
-(1, 'Test', 1);
+(1, 'Test', 1),
+(2, 'FAQ', 1);
 
 -- --------------------------------------------------------
 
@@ -165,7 +176,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `articles`
 --
 ALTER TABLE `articles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT pour la table `categories`
 --
@@ -175,12 +186,12 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT pour la table `forumMessage`
 --
 ALTER TABLE `forumMessage`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT pour la table `forumSujet`
 --
 ALTER TABLE `forumSujet`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT pour la table `users`
 --
