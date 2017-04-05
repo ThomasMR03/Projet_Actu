@@ -31,13 +31,10 @@ if ($page==='home') {
 
 elseif ($page==='forum') {
 	require ROOT.'/pages/forum/index.php';
-}elseif ($page==='forum.category') {
+}elseif ($page==='posts.category') {
 	require ROOT.'/pages/forum/category.php';
-}elseif ($page==='forum.single') {
-	require ROOT.'/pages/forum/single.php';
-}
 
-elseif ($page==='Login') {
+}elseif ($page==='Login') {
 	require ROOT.'/pages/users/login.php';
 }
 elseif ($page==='Disconnect') {
