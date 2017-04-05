@@ -28,7 +28,7 @@ class PostTable extends Table
 		return $this->query(" SELECT articles.id,
 									articles.titre,
 									articles.contenu,
-									articles.date_creation,
+									DATE_FORMAT(date_creation, '%d/%m/%Y à %Hh%imin%ss') as date_creation_fr,
 									articles.category_id,
 									articles.auteur,
 									categories.titre as category
@@ -46,7 +46,7 @@ class PostTable extends Table
 		return $this->query(" SELECT articles.id,
 									articles.titre,
 									articles.contenu,
-									articles.date_creation,
+									DATE_FORMAT(date_creation, '%d/%m/%Y à %Hh%imin%ss') as date_creation_fr,
 									articles.category_id,
 									articles.auteur,
 									categories.titre as category
