@@ -11,11 +11,11 @@
 	</thead>
 	<tbody>
 	<?php foreach (App::getInstance()->getTable('category')->all() as $categorie) {
-		  foreach (App::getInstance()->getTable('post')->nombre($categorie->id) as $category) :
+		  foreach (App::getInstance()->getTable('sujet')->nombreSujet($categorie->id) as $category) :
 			?>
 		<tr>
 			<td><a id="categorie_titre" href="<?= $categorie->Url; ?>"><?= $categorie->titre; ?></a></td>
-			<td><?= $category->category ?></td>
+			<td><?= $category->sujet?></td>
 		<?php endforeach; }?>
 		</tr>
 	</tbody>

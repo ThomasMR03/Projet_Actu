@@ -12,7 +12,9 @@
 <div class="col-md-8">
 	<h1 id="grostitre_article"><?= $message->titre; ?></h1>
 	<?php foreach ($lastMessage as $last) : ?>
+	<div>
 	<p><?= $last->message; ?></p>
+	</div>
 	<?php endforeach; ?>
 </div>
 <div class="col-md-4">
