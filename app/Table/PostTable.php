@@ -36,6 +36,25 @@ class PostTable extends Table
 								LEFT JOIN categories
 									ON articles.category_id = categories.id
 								ORDER BY date_creation DESC
+								LIMIT 0, 6
+
+							");
+	}
+
+	public function lastRecent()
+	{
+		return $this->query(" SELECT articles.id,
+									articles.titre,
+									articles.contenu,
+									articles.date_creation,
+									articles.category_id,
+									articles.auteur,
+									categories.titre as category
+								FROM articles
+								LEFT JOIN categories
+									ON articles.category_id = categories.id
+								ORDER BY date_creation DESC
+								LIMIT 0, 4
 
 							");
 	}
