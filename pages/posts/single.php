@@ -1,14 +1,14 @@
 <?php
 
 	if ($_POST) {
-		if (!empty($_POST['commentaire'] && $_POST['articles_id'])) {
+		if (!empty($_POST['commentaire'] && $_POST['articles_id'] && $_POST['auteurCommentaire'])) {
 			$req = $app->getTable('commentaire')->create(
 				["commentaire"=>$_POST['commentaire'],
-				"articles_id"=>$_POST['articles_id']
+				"articles_id"=>$_POST['articles_id'],
+				"auteurCommentaire"=>$_POST['auteurCommentaire']
 				]);
 			if ($req) {
 				////message Flash
-				header('location: index.php')
 				?>
 				<div class="alert alert-success">Bien enregistré</div>
 				<?php
@@ -52,14 +52,16 @@
 
 	<?php foreach ($lastCom as $last) : ?>
 		<h4>Commentaire(s) :</h4>
+	<p>Commentaire posté par : <?= $last->auteurCommentaire ?></p>
 	<p><?= $last->commentaire ?></p>
 	<?php endforeach; ?>
 
 <div class="col-md-8">
 <h2 id="add_article">Ajouter un commentaire</h2>
-<form method="post" action="">
+<form method="post" action="index.php?p=<?php echo $_GET['p'] ?>&id=<?= $_GET['id'] ?>">
+	<input type="hidden" name="auteurCommentaire" value="<?= $_SESSION['Auth']?>">
 	<textarea class="form-control" name="commentaire" placeholder="Ajouter votre commentaire" ></textarea>
-	<input type="hidden" name="articles_id" value="<?= $_GET['id'] ?>"> 
+	<input type="hidden" name="articles_id" value="<?= $_GET['id'] ?>">
 	<input class="btn btn-warning" type="submit" name="">
 </form>
 </div>
