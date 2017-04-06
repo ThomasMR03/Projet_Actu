@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Mer 05 Avril 2017 à 15:54
+-- Généré le :  Jeu 06 Avril 2017 à 09:18
 -- Version du serveur :  10.1.19-MariaDB
 -- Version de PHP :  7.0.9
 
@@ -41,12 +41,12 @@ CREATE TABLE `articles` (
 --
 
 INSERT INTO `articles` (`id`, `titre`, `contenu`, `date_creation`, `category_id`, `auteur`, `img`) VALUES
-(1, 'Bienvenue sur mon site ', 'Je vous souhaite la bienvenue sur mon site web, vous pourrez y retrouver une multitude d''articles sur le jeux-vidéo Dofus !', '2017-03-28', 3, 'CaptainFire03', ''),
-(9, 'Update du site', 'Le site affiche désormais correctement la date et l''heure !', '2017-03-29', 3, 'CaptainFire03', ''),
-(10, 'Forum en création', 'Ce site migre peu à peu vers un format (Forum)', '2017-03-30', 1, 'CaptainFire03', ''),
-(13, 'Nouveau Design', 'Un nouveau design est en cours de création', '2017-04-03', 3, 'CaptainFire03', ''),
-(15, 'Test Image', 'Test', '2017-04-03', 1, 'CaptainFire03', 'https://img.hebus.com/hebus_2008/01/05/preview/080105175018_77.jpg'),
-(16, 'Test', 'Test', '2017-04-03', 1, 'CaptainFire03', 'https://lh4.ggpht.com/wKrDLLmmxjfRG2-E-k5L5BUuHWpCOe4lWRF7oVs1Gzdn5e5yvr8fj-ORTlBF43U47yI=w300');
+(1, 'Bienvenue sur mon site ', 'Je vous souhaite la bienvenue sur mon site web, vous pourrez y retrouver une multitude d''articles sur le jeux-vidéo Dofus !', '2017-03-28', 0, 'CaptainFire03', ''),
+(9, 'Update du site', 'Le site affiche désormais correctement la date et l''heure !', '2017-03-29', 0, 'CaptainFire03', ''),
+(10, 'Forum en création', 'Ce site migre peu à peu vers un format (Forum)', '2017-03-30', 0, 'CaptainFire03', ''),
+(13, 'Nouveau Design', 'Un nouveau design est en cours de création', '2017-04-03', 0, 'CaptainFire03', ''),
+(15, 'Test Image', 'Test', '2017-04-03', 0, 'CaptainFire03', 'https://img.hebus.com/hebus_2008/01/05/preview/080105175018_77.jpg'),
+(16, 'Test', 'Test', '2017-04-03', 0, 'CaptainFire03', 'https://lh4.ggpht.com/wKrDLLmmxjfRG2-E-k5L5BUuHWpCOe4lWRF7oVs1Gzdn5e5yvr8fj-ORTlBF43U47yI=w300');
 
 -- --------------------------------------------------------
 
@@ -68,6 +68,19 @@ INSERT INTO `categories` (`id`, `titre`, `messageCat`) VALUES
 (1, 'Infos', 0),
 (2, 'Fake News', 0),
 (3, 'Nouveautés', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `commentaires`
+--
+
+CREATE TABLE `commentaires` (
+  `id` int(11) NOT NULL,
+  `commentaire` text NOT NULL,
+  `articles_id` int(11) NOT NULL,
+  `auteurCommentaire` varchar(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -164,6 +177,12 @@ ALTER TABLE `categories`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Index pour la table `commentaires`
+--
+ALTER TABLE `commentaires`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `membreRang`
 --
 ALTER TABLE `membreRang`
@@ -201,6 +220,11 @@ ALTER TABLE `articles`
 --
 ALTER TABLE `categories`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT pour la table `commentaires`
+--
+ALTER TABLE `commentaires`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `membreRang`
 --
