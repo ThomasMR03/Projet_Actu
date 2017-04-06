@@ -5,7 +5,7 @@ use Core\Config;
 
 class App
 {
-	public $titre = 'Mon Super Site';
+	public $titre = 'Roubl\'Actu';
 	
 	private static $_instance;
 	private $db_instance;
