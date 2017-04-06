@@ -21,48 +21,42 @@ $date = date("d-m-Y");
 <body>
 
 
-<!-- NAVBAR MOBILE UNIQUEMENT ! -->
-<div id="mobileNav" class="row" style="padding-top:10px;">
-  <div class="col-xs-2"></div>
-  <img onclick="navMobile()" id="mobileButton" src="img/menu.png" class="col-xs-2">
-  <?php if(isset($_SESSION['Auth'])): ?> <!-- Si connecté affiche Bonjour Pseudo, sinon affiche Visiteur -->
-        <div class="col-xs-5"><p class="mobileTxt">Bonjour <?= $_SESSION['Auth']; ?></p></div>
-        <?php else : ?>
-          <div class="col-xs-3"><p class="mobileTxt"> Visiteur</p></div>
-          <div class="col-xs-3"><a href="index.php?p=utilisateurs" class="mobileTxt">Inscription</a></div>     
-        <?php endif; ?>
-    <div class="col-xs-1"><a href="index.php?p=<?=$connect ?>" class="mobileTxt"><?= $connect ?></a></div>
-</div>
 
-<div  id="navmobile" class="hidden">
-  <div class="container">
-    <div class="row">
-      <a href="index.php" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 liens">Accueil</a>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="index.php"><img src="img/logoNav.png" height="40" style="margin-top: -10px;"></a>
     </div>
-  </div>
-</div>
-
-<!-- NAVBAR PC UNIQUEMENT ! -->
-<div id="nav">
-  <div class="container" style="width: 100%;">
-    <div class="col-md-1"></div>
-    <div class="col-md-1 accueil"><a href="index.php">Accueil</a></div>
-     <div class="col-md-1"></div>
-    <div class="col-md-3"></div>
-   <?php if(isset($_SESSION['Auth']) & $_SESSION['Rang'] == 'admin'): ?> <!-- Si connecté Admin affiche Panel Admin, sinon affiche rien -->
-       <div class="col-md-2 admin-panel"><a href="admin.php"><span class="glyphicon glyphicon-lock"></span> Panel Admin</a></div>
+    <ul class="nav navbar-nav">
+<!--       <li class="active"><a href="index.php">Accueil</a></li> -->
+      <!-- <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Page 1-1</a></li>
+          <li><a href="#">Page 1-2</a></li>
+          <li><a href="#">Page 1-3</a></li>
+        </ul>
+      </li> -->
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <?php if(isset($_SESSION['Auth']) & $_SESSION['Rang'] == 'admin'): ?> <!-- Si connecté Admin affiche Panel Admin, sinon affiche rien -->
+       <li><a href="admin.php"><span class="glyphicon glyphicon-lock"></span> Panel Admin</a></li>
    <?php else : ?>
-       <div class="col-md-2"></div>
    <?php endif; ?>
-    <?php if(isset($_SESSION['Auth'])): ?> <!-- Si connecté affiche Bonjour Pseudo, sinon affiche Visiteur -->
-        <div class="col-md-2 pseudo"><p>Bonjour <?= $_SESSION['Auth']; ?></p></div>
+
+      <?php if(isset($_SESSION['Auth'])): ?> <!-- Si connecté affiche Bonjour Pseudo, sinon affiche Visiteur -->
+        <li><a style="color: white;">Bonjour <?= $_SESSION['Auth']; ?></a></li>
         <?php else : ?>
-          <div class="col-md-1 pseudo"><p> Visiteur</p></div>
-          <div class="col-md-2 inscription"><a href="index.php?p=utilisateurs">Inscription</a></div>     
+          <li><a style="color: white;"> Vous n'êtes pas connecté</a></li>
+          <li><a href="index.php?p=utilisateurs"><span class="glyphicon glyphicon-user"></span> S'inscrire</a></li>
         <?php endif; ?>
-    <div class="col-md-1 login"><a href="index.php?p=<?=$connect ?>"> <?= $connect ?></a></div>
+
+      
+      <li><a href="index.php?p=<?=$connect ?>"><span class="glyphicon glyphicon-log-in"></span>  <?= $connect ?></a></li>
+    </ul>
   </div>
-</div>
+</nav>
+
+
 <div class="header"> <!-- Div pour entete --> </div>
 
 

@@ -19,11 +19,22 @@ if (isset($_POST['name'], $_POST['password'], $_POST['date_de_naissance']))
  	
 
 
- <h2>Inscription :</h2>
 
+
+<div class="row" style="width: 99%;">
+<div class="col-md-4"></div>
+
+<div class="col-md-4" id="inscription">
+ <h2>Inscription</h2>
  <form action="" method="post">
- 	<input type="text" name="name" placeholder="Votre Pseudo">
- 	<input type="text" name="password" placeholder="Votre mot de passe">
- 	<input type="date" name="date_de_naissance" placeholder="Date de naissance">
- 	<input class="btn btn-danger" type="submit">
+ 	<h3>Pseudonyme</h3>
+ 	<input type="text" name="name" placeholder="Votre Pseudo"><br>
+ 	<h3>Mot de passe</h3>
+ 	<input type="text" name="password" placeholder="Votre mot de passe"><br>
+ 	<h3>Date de naissance</h3>
+ 	<input type="date" name="date_de_naissance" placeholder="Date de naissance"><br>
+ 	<button type="submit">Valider</button>
  </form>
+ </div>
+
+ </div>

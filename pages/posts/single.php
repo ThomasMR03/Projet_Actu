@@ -35,7 +35,31 @@
 	<h6 style="color: grey;">Article posté par <?= $post->auteur ?> </h6>
 	</div>
 	
+	<div class="commentaire">
+	<h4>Commentaire(s) :</h4>
+	<?php foreach ($lastCom as $last) : ?>
+	<div class="commentairePersonne">
+	<h5><?= $last->auteurCommentaire ?></h5>
+	<p><?= $last->commentaire ?></p>
+	</div>
+	<?php endforeach; ?>
+	</div>
 
+
+
+<?php if(isset($_SESSION['Auth'])): ?> <!-- Si connecté affiche form commentaire, sinon affiche Redirection -->
+        <div class="commentaireTexte">
+			<h2>Ajouter un commentaire</h2>
+				<form method="post" action="index.php?p=<?php echo $_GET['p'] ?>&id=<?= $_GET['id'] ?>">
+					<input type="hidden" name="auteurCommentaire" value="<?= $_SESSION['Auth']?>">
+					<textarea class="form-control" name="commentaire" placeholder="Ajouter votre commentaire" ></textarea>
+					<input type="hidden" name="articles_id" value="<?= $_GET['id'] ?>">
+					<input class="btn btn-warning" type="submit" name="" style="margin-top: 20px;">
+				</form>
+		</div>
+        <?php else : ?>
+          <!-- Afficher redirection vers login -->
+        <?php endif; ?>
 </div>
 
 <div class="col-md-1"></div>
@@ -50,23 +74,6 @@
 		<?php endforeach; ?>
 	</div>
 
-	<?php foreach ($lastCom as $last) : ?>
-		<h4>Commentaire(s) :</h4>
-	<p>Commentaire posté par : <?= $last->auteurCommentaire ?></p>
-	<p><?= $last->commentaire ?></p>
-	<?php endforeach; ?>
+	
 
-
-	<?php if(isset($_SESSION['Auth'])): ?> <!-- Si connecté affiche form commentaire, sinon affiche Redirection -->
-        <div class="col-md-8">
-			<h2 id="add_article">Ajouter un commentaire</h2>
-				<form method="post" action="index.php?p=<?php echo $_GET['p'] ?>&id=<?= $_GET['id'] ?>">
-					<input type="hidden" name="auteurCommentaire" value="<?= $_SESSION['Auth']?>">
-					<textarea class="form-control" name="commentaire" placeholder="Ajouter votre commentaire" ></textarea>
-					<input type="hidden" name="articles_id" value="<?= $_GET['id'] ?>">
-					<input class="btn btn-warning" type="submit" name="">
-				</form>
-		</div>
-        <?php else : ?>
-          <!-- Afficher redirection vers login -->
-        <?php endif; ?>
+	
