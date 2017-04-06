@@ -56,12 +56,17 @@
 	<p><?= $last->commentaire ?></p>
 	<?php endforeach; ?>
 
-<div class="col-md-8">
-<h2 id="add_article">Ajouter un commentaire</h2>
-<form method="post" action="index.php?p=<?php echo $_GET['p'] ?>&id=<?= $_GET['id'] ?>">
-	<input type="hidden" name="auteurCommentaire" value="<?= $_SESSION['Auth']?>">
-	<textarea class="form-control" name="commentaire" placeholder="Ajouter votre commentaire" ></textarea>
-	<input type="hidden" name="articles_id" value="<?= $_GET['id'] ?>">
-	<input class="btn btn-warning" type="submit" name="">
-</form>
-</div>
+
+	<?php if(isset($_SESSION['Auth'])): ?> <!-- Si connecté affiche form commentaire, sinon affiche Redirection -->
+        <div class="col-md-8">
+			<h2 id="add_article">Ajouter un commentaire</h2>
+				<form method="post" action="index.php?p=<?php echo $_GET['p'] ?>&id=<?= $_GET['id'] ?>">
+					<input type="hidden" name="auteurCommentaire" value="<?= $_SESSION['Auth']?>">
+					<textarea class="form-control" name="commentaire" placeholder="Ajouter votre commentaire" ></textarea>
+					<input type="hidden" name="articles_id" value="<?= $_GET['id'] ?>">
+					<input class="btn btn-warning" type="submit" name="">
+				</form>
+		</div>
+        <?php else : ?>
+          <!-- Afficher redirection vers login -->
+        <?php endif; ?>
