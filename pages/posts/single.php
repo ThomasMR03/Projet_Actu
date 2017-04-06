@@ -59,7 +59,7 @@
 <h2 id="add_article">Ajouter un commentaire</h2>
 <form method="post" action="">
 	<textarea class="form-control" name="commentaire" placeholder="Ajouter votre commentaire" ></textarea>
-	<input type="radio" name="articles_id" id="optionsRadios1" value="<?= $_GET['id'] ?>"> 
+	<input type="hidden" name="articles_id" value="<?= $_GET['id'] ?>"> 
 	<input class="btn btn-warning" type="submit" name="">
 </form>
 </div>
