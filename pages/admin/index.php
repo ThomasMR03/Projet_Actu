@@ -1,4 +1,6 @@
-
+<?php if(isset($_SESSION['Auth']) & $_SESSION['Rang'] == 'admin'): ?>
+<?php else : header('location: index.php'); ?>
+<?php endif; ?>
 
 <div id="titre_admin">
 	<h1>Panel Administrateur</h1>
