@@ -6,34 +6,37 @@ use Core\Database\Database;
 */
 class DBAuth
 {
-	protected $db;
-	function __construct(Database $db){
-		$this->db =$db;
-	}
+    protected $db;
+    function __construct(Database $db){
+        $this->db =$db;
+    }
 
-	public function login($username, $password)
-	{
-		$user = $this->db->prepare('SELECT * FROM users WHERE name = ?', [$username], null, true);
-		
-		if ($user) {
-			if ($user->password === sha1($password)) {
-				$_SESSION['Auth'] = $user->name;
-				return true;
-			}
-		}
-		return false;
-	}
-	
-	public function logged()
-	{
-		return isset($_SESSION['Auth']);
-	}	
-	public function getUserID(){
-		if ($this->logged()) {
-			return $_SESSION['Auth'];
-		}else{
-			return false;
-		}
-	}
+    public function login($username, $password)
+    {
+        $user = $this->db->prepare('SELECT * FROM users WHERE name = ?', [$username], null, true);
+        
+        if ($user) {
+            if ($user->password === sha1($password)) {
+                $_SESSION['Auth'] = $user->name;
+                $_SESSION['Rang'] = $user->membre_rang;
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    public function logged()
+    {
+        return isset($_SESSION['Auth']);
+        return isset($_SESSION['Rang']);
+    }    
+    public function getUserID(){
+        if ($this->logged()) {
+            return $_SESSION['Auth'];
+            return $_SESSION['Rang'];
+        }else{
+            return false;
+        }
+    }
 }
 ?>
