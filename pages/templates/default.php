@@ -49,7 +49,11 @@ $date = date("d-m-Y");
     <div class="col-md-1 accueil"><a href="index.php">Accueil</a></div>
      <div class="col-md-1"></div>
     <div class="col-md-3"></div>
-    <div class="col-md-2 admin-panel"><a href="admin.php"><span class="glyphicon glyphicon-lock"></span> Panel Admin</a></div>
+   <?php if(isset($_SESSION['Auth']) & $_SESSION['Rang'] == 'admin'): ?> <!-- Si connecté Admin affiche Panel Admin, sinon affiche rien -->
+       <div class="col-md-2 admin-panel"><a href="admin.php"><span class="glyphicon glyphicon-lock"></span> Panel Admin</a></div>
+   <?php else : ?>
+       <div class="col-md-2"></div>
+   <?php endif; ?>
     <?php if(isset($_SESSION['Auth'])): ?> <!-- Si connecté affiche Bonjour Pseudo, sinon affiche Visiteur -->
         <div class="col-md-2 pseudo"><p>Bonjour <?= $_SESSION['Auth']; ?></p></div>
         <?php else : ?>
