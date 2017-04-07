@@ -1,23 +1,24 @@
 
 <!-- NAVBAR MOBILE UNIQUEMENT ! -->
 <div id="mobileNav" class="row" style="padding-top:10px;">
-  <div class="col-xs-2"></div>
-  <img onclick="navMobile()" id="mobileButton" src="img/menu.png" class="col-xs-2">
-  <?php if(isset($_SESSION['Auth'])): ?> <!-- Si connecté affiche Bonjour Pseudo, sinon affiche Visiteur -->
-        <div class="col-xs-5"><p class="mobileTxt">Bonjour <?= $_SESSION['Auth']; ?></p></div>
-        <?php else : ?>
-          <div class="col-xs-3"><p class="mobileTxt"> Visiteur</p></div>
-          <div class="col-xs-3"><a href="index.php?p=utilisateurs" class="mobileTxt">Inscription</a></div>     
-        <?php endif; ?>
-    <div class="col-xs-1"><a href="index.php?p=<?=$connect ?>" class="mobileTxt"><?= $connect ?></a></div>
+  <img src="img/logoNav.png" height="40" style="margin-top: -8px; margin-left: 5px;">
+  <a onclick="navMobile()" id="mobileButton" class="glyphicon glyphicon-align-justify"></a>
 </div>
 
 <div  id="navmobile" class="hidden">
-  <div class="container">
     <div class="row">
-      <a href="index.php" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 liens">Accueil</a>
+    <?php if(isset($_SESSION['Auth'])): ?> <!-- Si connecté affiche Bonjour Pseudo, sinon affiche Visiteur -->
+        <p class="col-xs-12 col-sm-12 liens" style="font-size: 1em; background-color:rgb(199,211,29);padding-top: 10px; padding-bottom: 10px;">Bonjour <?= $_SESSION['Auth']; ?></p>
+        <?php else : ?>
+          <p class="col-xs-12 col-sm-12 liens"  style="font-size: 1em; background-color:rgb(199,211,29);padding-top: 10px; padding-bottom: 10px;"> Vous n'êtes pas connécté</p>
+          <a href="index.php?p=utilisateurs" class="col-xs-12 col-sm-12 liens" style="padding: 0;">Inscription</a>  
+        <?php endif; ?>
+      <a href="index.php?p=<?=$connect ?>" class="col-xs-12 col-sm-12 liens"  style="padding: 0; border: none;"><?= $connect ?></a>
+    <img src="img/roublard.png" width="90%;" style="margin:10px;">
+       
+
+      <a href="index.php" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 liensNav">Accueil</a>
     </div>
-  </div>
 </div>
 
 

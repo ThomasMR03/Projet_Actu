@@ -21,7 +21,7 @@ $date = date("d-m-Y");
   </head>
 <body>
 
-
+<?php include 'navbar_mobile.php' ?>
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
