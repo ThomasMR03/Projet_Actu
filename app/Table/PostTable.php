@@ -29,12 +29,8 @@ class PostTable extends Table
 									articles.titre,
 									articles.contenu,
 									DATE_FORMAT(date_creation, '%d/%m/%Y à %Hh%imin%ss') as date_creation_fr,
-									articles.category_id,
-									articles.auteur,
-									categories.titre as category
+									articles.auteur
 								FROM articles
-								LEFT JOIN categories
-									ON articles.category_id = categories.id
 								ORDER BY date_creation DESC
 								LIMIT 0, 6
 
@@ -47,12 +43,8 @@ class PostTable extends Table
 									articles.titre,
 									articles.contenu,
 									DATE_FORMAT(date_creation, '%d/%m/%Y à %Hh%imin%ss') as date_creation_fr,
-									articles.category_id,
 									articles.auteur,
-									categories.titre as category
 								FROM articles
-								LEFT JOIN categories
-									ON articles.category_id = categories.id
 								ORDER BY date_creation DESC
 								LIMIT 0, 4
 
@@ -75,7 +67,7 @@ class PostTable extends Table
 							", [$id], true);
 	}
 
-	public function lastByCategory($category_id, $one=false)
+/**	public function lastByCategory($category_id, $one=false)
 	{
 		return $this->query(" SELECT articles.id,
 									articles.titre,
@@ -89,5 +81,10 @@ class PostTable extends Table
 								WHERE categories.id = ?
 								ORDER BY articles.id DESC
 							", [$category_id], $one);
+	} */
+
+	public function page()
+	{
+		return $this->query ("SELECT COUNT(id) as nbArt FROM articles");
 	}
 }
