@@ -21,18 +21,18 @@
 	}
 	$app->titre = $post->titre;
 ?>
-<div class="col-md-4">
+<div class="col-md-2">
 	
 </div>
-<div class="col-md-4">
-<h2 id="modif_article">Modifier votre article</h2>
+<div class="col-md-8" id="zoneAdmin">
+<h2 id="modif_article" style="font-size: 2.5em; margin-bottom: 50px; border-bottom:6px solid  rgb(199,211,29); padding-bottom: 20px;">Modifier votre article</h2>
 <form method="post" action="admin.php?p=posts.single&id=<?= $post->id; ?>">
 	<input type="hidden" name="id" value="<?= $post->id; ?>">
-	<input class="form-control" type="text" name="titre" value="<?= $post->titre; ?>">
-	<textarea class="form-control" name="contenu" ><?= $post->contenu; ?></textarea>
-	<input type="URL" name="img">
-	<input class="btn btn-warning" type="submit" name=""> </br>
-	<a href="admin.php">Retour vers la page Admin</a>
+	<input class="form-control" type="text" name="titre" value="<?= $post->titre; ?>" style="margin-bottom: 20px;">
+	<textarea class="form-control" name="contenu"  style="margin-bottom: 20px; height: 400px;"><?= $post->contenu; ?></textarea>
+	<input type="URL" name="img" style="margin-bottom: 20px;"> <br>
+	<input class="btn btn-warning" type="submit" name=""> </br><br>
+	<a href="admin.php" id="buttonAction">Retour vers la page Admin</a>
 </form>
 </div>
 <div class="col-md-4">
