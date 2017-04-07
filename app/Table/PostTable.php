@@ -36,7 +36,6 @@ class PostTable extends Table
 								LEFT JOIN categories
 									ON articles.category_id = categories.id
 								ORDER BY date_creation DESC
-								LIMIT 0, 6
 
 							");
 	}

@@ -37,15 +37,28 @@
 	
 	<div class="commentaire">
 	<h4>Commentaire(s) :</h4>
+
+	<div id="commentaire">
 	<?php foreach ($lastCom as $last) : ?>
+	<span>
 	<div class="commentairePersonne">
 	<h5><?= $last->auteurCommentaire ?></h5>
 	<p><?= $last->commentaire ?></p>
 	</div>
+	</span>
 	<?php endforeach; ?>
 	</div>
+	</div>
 
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/Paginate.js"></script>
+<script>
+$('#commentaire').easyPaginate({
+    paginateElement: 'span',
+    elementsPerPage: 10,
+    effect: 'climb'
+});
+</script>
 
 <?php if(isset($_SESSION['Auth'])): ?> <!-- Si connecté affiche form commentaire, sinon affiche Redirection -->
         <div class="commentaireTexte">
@@ -76,4 +89,3 @@
 
 	
 
-	

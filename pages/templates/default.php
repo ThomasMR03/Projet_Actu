@@ -75,8 +75,17 @@ $date = date("d-m-Y");
 
 <footer></footer>
 
-<script type="text/javascript" src="js/script.js"></script> 
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/Paginate.js"></script>
+
+<script>
+$('#actuu').easyPaginate({
+    paginateElement: 'span',
+    elementsPerPage: 6,
+    effect: 'climb'
+});
+</script>
 </body>
                 <!-- SCRIPTS LOADS -->
 <!-- <script type="text/javascript" hrel="scripts/bootstrap.min.js"></script>

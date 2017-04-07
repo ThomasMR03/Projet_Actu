@@ -7,3 +7,17 @@ function navMobile(){
 		$("#navmobile").attr('class','cache');
 	}
 }
+
+
+$('#commentaire').easyPaginate({
+    paginateElement: 'span',
+    elementsPerPage: 1,
+    effect: 'climb'
+});
+
+
+$('#actuu').easyPaginate({
+    paginateElement: 'span',
+    elementsPerPage: 3,
+    effect: 'climb'
+});

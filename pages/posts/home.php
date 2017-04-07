@@ -5,16 +5,23 @@
 	<div class="col-md-7" style="background:rgba(0,0,0,0.7);">
 		<div class="row">
 		<div class="col-md-12"><h1 class="actu" style="padding-left: 30px;">Actualité</h1></div>
+		</div>
+		<div class="row" id="actuu">
 		<?php foreach (App::getInstance()->getTable('post')->last() as $post) : ?>
-			<a href="<?= $post->Url ?>"><div id="article" class="col-md-6">
-			<div class="imageArticle"><img src="img/news.jpg"></div>
-			<div class="contenuArticle">
-			<h2><a href="<?= $post->Url ?>"> <?= $post->titre ?> </a></h2>
-			<h4>Article posté par <?= $post->auteur ?> le <?= $post->date_creation_fr ?></h4>
-			<p><?= $post->contenu ?></p>
-			</div></a>
-			</div>
+			<span>
+			<a href="<?= $post->Url ?>">
+				<div id="article" class="col-md-6">
+					<div class="imageArticle"><img src="img/news.jpg"></div>
+					<div class="contenuArticle">
+							<h2><a href="<?= $post->Url ?>"> <?= $post->titre ?> </a></h2>
+							<h4>Article posté par <?= $post->auteur ?> le <?= $post->date_creation_fr ?></h4>
+							<p><?= $post->contenu ?></p>
+					</div>
+				</div>
+			</a>
+		</span>
 		<?php endforeach; ?>
+
 		</div>
 	</div>
 	<div class="col-md-1"></div>
