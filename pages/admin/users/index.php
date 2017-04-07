@@ -4,15 +4,20 @@ $utilisateurs = App::getInstance()->getTable('User')->all()
 
  ?>
 
- <h2>Liste de tout les utilisateurs</h2>
 
- <table class="table table-bordered">
+<div class="row" style="width: 99%">
+<div class="col-md-2"></div>
+
+<div class="col-md-8" id="zoneAdmin">
+ <h2 style=" border-bottom:6px solid  rgb(199,211,29); padding-bottom: 10px;">Liste de tout les utilisateurs</h2>
+
+ <table class="table">
 	<thead>
 		<tr>
-			<th>Pseudo</th>
-			<th>Age</th>
-			<th>Date de Naissance</th>
-			<th>Rang</th>
+			<th class="description" style="text-align: center;">Pseudo</th>
+			<th class="description" style="text-align: center;">Age</th>
+			<th class="description" style="text-align: center;">Date de Naissance</th>
+			<th class="description" style="text-align: center;">Rang</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -31,3 +36,4 @@ $utilisateurs = App::getInstance()->getTable('User')->all()
 		<?php endforeach ?>
 	</tbody>
 </table>
+</div>

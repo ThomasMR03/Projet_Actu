@@ -2,56 +2,69 @@
 <?php else : header('location: index.php'); ?>
 <?php endif; ?>
 
-<div id="titre_admin">
-	<h1>Panel Administrateur</h1>
-	<?php if(isset($_SESSION['Auth'])): ?>
-        <h4 id="hello_admin">Bonjour <?= $_SESSION['Auth']; ?></h4>
-        <p id="hello_admin">Soyez le bienvenue sur votre espace d'administration !</p>
-        <?php else : ?>
-        <h4 id="hello_admin"> Vous êtes déconnecter.</h4>
-        <?php endif; ?>
+
+
+
+
+
+<div class="row" style="width: 99%">
+<div class="col-md-2"></div>
+
+<div class="col-md-8" id="zoneAdmin">
+	<div id="titre_admin">
+		<h1>Panel Administrateur</h1>
+		<?php if(isset($_SESSION['Auth'])): ?>
+	        <h4 id="hello_admin">Bonjour <?= $_SESSION['Auth']; ?></h4>
+	        <p id="hello_admin">Soyez le bienvenue sur votre espace d'administration !</p>
+	        <?php else : ?>
+	        <h4 id="hello_admin"> Vous êtes déconnecter.</h4>
+	        <?php endif; ?>
+	</div>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<td class="description">Que voulez-vous faire ?</td>
+				<td></td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+			<td><p class="action">Ajouter un nouvel article !</p></td>
+			<td style="padding: 30px; border: none;">
+			<a href="admin.php?p=posts.add" id="buttonAction">Let's go !</a>
+			</td>
+			</tr>
+
+			<tr>
+				<td><p class="action">Editer votre article ou supprimer le.</p></td>
+				<td style="padding: 30px; border: none;">
+					<a href="admin.php?p=posts.edit" id="buttonAction">Let's go !</a>
+				</td>
+			</tr>
+			<tr>
+			<td><p class="action">Ajouter une nouvelle catégorie ?</p></td>
+			<td style="padding: 30px; border: none;">
+			<a href="admin.php?p=category.add" id="buttonAction">Let's go !</a>
+			</td>
+			</tr>
+
+			<tr>
+				<td><p class="action">Editer votre catégorie ou supprimer la !</p></td>
+				<td style="padding: 30px; border: none;">
+					<a href="admin.php?p=category.edit" id="buttonAction">Let's go !</a>
+				</td>
+			</tr>
+
+			<tr>
+				<td><p class="action">Liste de tout les utilisateurs :D</p></td>
+				<td style="padding: 30px; border: none;">
+					<a href="admin.php?p=users.index" id="buttonAction">Let's go !</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
 </div>
 
-<table class="table">
-	<thead>
-		<tr>
-			<td>DESC DE L'ACTION</td>
-			<td>ACTION</td>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-		<td>Ajouter un nouvel article</td>
-		<td>
-		<a href="admin.php?p=posts.add" id="btn_admin" class="btn btn-primary">Ajouter un article</a>
-		</td>
-		</tr>
 
-		<tr>
-			<td>Editer votre article ou supprimer le.</td>
-			<td>
-				<a href="admin.php?p=posts.edit" id="btn_admin" class="btn btn-danger">Modifier les articles</a>
-			</td>
-		</tr>
-		<tr>
-		<td>Ajouter une nouvelle catégorie</td>
-		<td>
-		<a href="admin.php?p=category.add" id="btn_admin" class="btn btn-primary">Ajouter une catégorie</a>
-		</td>
-		</tr>
-
-		<tr>
-			<td>Editer votre catégorie ou supprimer la.</td>
-			<td>
-				<a href="admin.php?p=category.edit" id="btn_admin" class="btn btn-danger">Modifier les catégories</a>
-			</td>
-		</tr>
-
-		<tr>
-			<td>Liste de tout les utilisateurs</td>
-			<td>
-				<a href="admin.php?p=users.index" id="btn_admin" class="btn btn-danger">Liste des utilisateurs</a>
-			</td>
-		</tr>
-	</tbody>
-</table>
+</div>
