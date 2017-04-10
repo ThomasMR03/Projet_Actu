@@ -30,7 +30,7 @@
 		<?php foreach (App::getInstance()->getTable('post')->lastRecent() as $post) : ?>
 			<a href="<?= $post->Url ?>"><div class="fondRecent">
 				<h5><a href="<?= $post->Url ?>"> <?= $post->titre ?> </a></h5>
-				<div class="imageArticleRecent"><img src="img/news.jpg"></div>
+				<div class="imageArticleRecent"><img src="img/<?=$post->img?>"></div>
 				<p>Article posté par <?= $post->auteur ?> <br> Le <?= $post->date_creation_fr ?></p>
 			</div></a>
 		<?php endforeach; ?>

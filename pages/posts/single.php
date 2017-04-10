@@ -27,7 +27,7 @@
 <div class="col-md-1"></div>
 <div class="col-md-7" id="grosArticle">
 	<h1 id="grostitre_article"><?= $post->titre; ?></h1>
-	<img src="img/news.jpg">
+	<img src="img/<?=$post->img?>">
 	<div class="texteGrosArticle">
 	<p><?= $post->contenu; ?></p>
 	<br><br>
@@ -80,7 +80,7 @@ $('#commentaire').easyPaginate({
 		<?php foreach (App::getInstance()->getTable('post')->lastRecent() as $post) : ?>
 			<div class="fondRecent">
 				<h5><a href="<?= $post->Url ?>"> <?= $post->titre ?> </a></h5>
-				<div class="imageArticleRecent"><img src="img/news.jpg"></div>
+				<div class="imageArticleRecent"><img src="img/<?=$post->img?>"></div>
 				<p>Article posté par <?= $post->auteur ?> <br> Le <?= $post->date_creation_fr ?></p>
 			</div>
 		<?php endforeach; ?>
