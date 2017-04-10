@@ -124,7 +124,8 @@ margin: 0; padding: 0;}
 	padding: 10px;
 	margin-top: 20px;
 	}
-.actu{color:  rgb(113, 70, 38);font-family: 'Ubuntu Mono', monospace; background-color: rgba(255,255,255,1); padding: 10px; border-bottom:6px solid  rgb(199,211,29); font-weight: bold;}
+.actu{color:  rgb(113, 70, 38);font-family: 'Ubuntu Mono', monospace; background-color: rgba(255,255,255,1); padding: 10px; border-bottom:6px solid  rgb(199,211,29); font-weight: bold; text-decoration: none;}
+.actu:hover{text-decoration: none; color: rgb(113, 70, 38)}
 
 #article h2{
 	text-align: center;
