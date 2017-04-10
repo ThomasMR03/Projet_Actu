@@ -29,7 +29,6 @@
 	<h1 id="grostitre_article"><?= $post->titre; ?></h1>
 	<img src="img/news.jpg">
 	<div class="texteGrosArticle">
-	<p style="text-align: center; color: darkgrey;"><?= $post->category; ?></p>
 	<p><?= $post->contenu; ?></p>
 	<br><br>
 	<h6 style="color: grey;">Article posté par <?= $post->auteur ?> </h6>
