@@ -11,7 +11,7 @@
 			<span>
 			<a href="<?= $post->Url ?>">
 				<div id="article" class="col-md-6">
-					<div class="imageArticle"><img src="img/news.jpg"></div>
+					<div class="imageArticle"><img src="img/<?=$post->img?>"></div>
 					<div class="contenuArticle">
 							<h2><a href="<?= $post->Url ?>"> <?= $post->titre ?> </a></h2>
 							<h4>Article posté par <?= $post->auteur ?> le <?= $post->date_creation_fr ?></h4>
