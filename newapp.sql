@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Lun 10 Avril 2017 à 10:58
+-- Généré le :  Lun 10 Avril 2017 à 15:25
 -- Version du serveur :  10.1.19-MariaDB
 -- Version de PHP :  7.0.9
 
@@ -149,6 +149,8 @@ CREATE TABLE `users` (
   `name` varchar(20) NOT NULL,
   `password` varchar(50) NOT NULL,
   `date_de_naissance` date NOT NULL,
+  `mail` varchar(100) NOT NULL,
+  `date_inscription` date NOT NULL,
   `membre_rang` enum('visiteur','inscrit','modo','admin') DEFAULT 'inscrit',
   `message` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -157,10 +159,10 @@ CREATE TABLE `users` (
 -- Contenu de la table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `password`, `date_de_naissance`, `membre_rang`, `message`) VALUES
-(1, 'CaptainFire03', 'c955a0060768c59720af5c02a18797717a4aeda1', '1995-10-19', 'admin', 0),
-(2, 'Seizuko', 'f8728f2c3d5b7e7529ebeadc434d5db085fa47ee', '1995-03-22', 'admin', 0),
-(4, 'TestAdmin', '98aadb37083eddd855c27feccb15dc8c5b127fd0', '1995-10-19', 'inscrit', 0);
+INSERT INTO `users` (`id`, `name`, `password`, `date_de_naissance`, `mail`, `date_inscription`, `membre_rang`, `message`) VALUES
+(1, 'CaptainFire03', 'c955a0060768c59720af5c02a18797717a4aeda1', '1995-10-19', 'thomas.face03@gmail.com', '2017-04-10', 'admin', 0),
+(2, 'Seizuko', 'f8728f2c3d5b7e7529ebeadc434d5db085fa47ee', '1995-03-22', '', '2017-04-10', 'admin', 0),
+(4, 'TestAdmin', '98aadb37083eddd855c27feccb15dc8c5b127fd0', '1995-10-19', '', '2017-04-10', 'inscrit', 0);
 
 --
 -- Index pour les tables exportées
@@ -246,7 +248,7 @@ ALTER TABLE `sujets`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
