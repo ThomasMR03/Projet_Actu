@@ -14,6 +14,8 @@ class UserTable extends Table
 		return $this->query(" INSERT users.id,
 									 users.name
 									 users.password
+									 users.mail
+									 users.date_inscription
 									 users.date_de_naissance
 							  FROM   users");
 	}
