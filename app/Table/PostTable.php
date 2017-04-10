@@ -31,6 +31,7 @@ class PostTable extends Table
 									DATE_FORMAT(date_creation, '%d/%m/%Y à %Hh%imin%ss') as date_creation_fr,
 									articles.category_id,
 									articles.auteur,
+									articles.img,
 									categories.titre as category
 								FROM articles
 								LEFT JOIN categories
@@ -48,6 +49,7 @@ class PostTable extends Table
 									DATE_FORMAT(date_creation, '%d/%m/%Y à %Hh%imin%ss') as date_creation_fr,
 									articles.category_id,
 									articles.auteur,
+									articles.img,
 									categories.titre as category
 								FROM articles
 								LEFT JOIN categories
