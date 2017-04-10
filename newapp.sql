@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Jeu 06 Avril 2017 à 09:18
+-- Généré le :  Lun 10 Avril 2017 à 10:58
 -- Version du serveur :  10.1.19-MariaDB
 -- Version de PHP :  7.0.9
 
@@ -41,12 +41,14 @@ CREATE TABLE `articles` (
 --
 
 INSERT INTO `articles` (`id`, `titre`, `contenu`, `date_creation`, `category_id`, `auteur`, `img`) VALUES
-(1, 'Bienvenue sur mon site ', 'Je vous souhaite la bienvenue sur mon site web, vous pourrez y retrouver une multitude d''articles sur le jeux-vidéo Dofus !', '2017-03-28', 0, 'CaptainFire03', ''),
-(9, 'Update du site', 'Le site affiche désormais correctement la date et l''heure !', '2017-03-29', 0, 'CaptainFire03', ''),
-(10, 'Forum en création', 'Ce site migre peu à peu vers un format (Forum)', '2017-03-30', 0, 'CaptainFire03', ''),
-(13, 'Nouveau Design', 'Un nouveau design est en cours de création', '2017-04-03', 0, 'CaptainFire03', ''),
-(15, 'Test Image', 'Test', '2017-04-03', 0, 'CaptainFire03', 'https://img.hebus.com/hebus_2008/01/05/preview/080105175018_77.jpg'),
-(16, 'Test', 'Test', '2017-04-03', 0, 'CaptainFire03', 'https://lh4.ggpht.com/wKrDLLmmxjfRG2-E-k5L5BUuHWpCOe4lWRF7oVs1Gzdn5e5yvr8fj-ORTlBF43U47yI=w300');
+(1, 'Bienvenue sur mon site ', 'Je vous souhaite la bienvenue sur mon site web, vous pourrez y retrouver une multitude d''articles sur le jeux-vidéo Dofus !', '2017-03-28', 0, 'CaptainFire03', 'dofus_test.jpg'),
+(9, 'Update du site', 'Le site affiche désormais correctement la date et l''heure !', '2017-03-29', 0, 'CaptainFire03', 'dofus_test.jpg'),
+(10, 'Forum en création', 'Ce site migre peu à peu vers un format (Forum)', '2017-03-30', 0, 'CaptainFire03', 'dofus_test.jpg'),
+(13, 'Nouveau Design', 'Un nouveau design est en cours de création', '2017-04-03', 0, 'CaptainFire03', 'dofus_test.jpg'),
+(15, 'Test Image', 'Test', '2017-04-03', 0, 'CaptainFire03', 'dofus_test.jpg'),
+(16, 'Test', 'Test', '2017-04-03', 0, 'CaptainFire03', 'dofus_test.jpg'),
+(17, 'Test Page', 'Test Page', '2017-04-06', 1, 'CaptainFire03', 'dofus_test.jpg'),
+(18, 'Test Image', 'Bla bla bla', '2017-04-10', NULL, 'CaptainFire03', 'dofus_test.jpg');
 
 -- --------------------------------------------------------
 
@@ -214,7 +216,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `articles`
 --
 ALTER TABLE `articles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT pour la table `categories`
 --
