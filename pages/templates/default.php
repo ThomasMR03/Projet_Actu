@@ -40,7 +40,7 @@ $date = date("d-m-Y");
       </li> -->
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <?php if(isset($_SESSION['Auth']) & $_SESSION['Rang'] == 'admin'): ?> <!-- Si connecté Admin affiche Panel Admin, sinon affiche rien -->
+      <?php if(isset($_SESSION['Auth']) & isset($_SESSION['Rang']) == 'admin'): ?> <!-- Si connecté Admin affiche Panel Admin, sinon affiche rien -->
        <li><a href="admin.php"><span class="glyphicon glyphicon-lock"></span> Panel Admin</a></li>
    <?php else : ?>
    <?php endif; ?>
