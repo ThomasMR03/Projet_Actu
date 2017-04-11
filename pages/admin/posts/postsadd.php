@@ -23,6 +23,8 @@ $date = date('Y-m-d');
 	}
 ?>
 
+<script src="https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
+
 <div class="col-md-4">
 	
 </div>
@@ -34,7 +36,12 @@ $date = date('Y-m-d');
 	<!-- <input type="URL" name="img" placeholder="URL de l'image"  style="margin-bottom: 20px;"> -->
 	<input class="form-control" type="file" name="img" accept="img/" style="margin-bottom: 20px;">
 	<input type="hidden" name="auteur" value="<?= $_SESSION['Auth']?>">
-	<textarea class="form-control" name="contenu" placeholder="Contenu Articles" style="margin-bottom: 20px;" ></textarea>
+	<textarea class="form-control" name="contenu" placeholder="Contenu Articles" id="editor1" rows="10" cols="80" style="margin-bottom: 20px;"></textarea>
+	<script>
+        // Replace the <textarea id="editor1"> with a CKEditor
+        // instance, using default configuration.
+        CKEDITOR.replace( 'editor1' );
+    </script>
     <input type="hidden" name="date_creation" style="color: black; margin-bottom: 20px;" value="<?= $date ?>"><br>
 	<input class="btn btn-warning" type="submit" name="" style="margin-bottom: 80px;">
 </form>
