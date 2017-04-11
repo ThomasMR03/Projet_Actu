@@ -30,7 +30,6 @@
 	<input type="hidden" name="id" value="<?= $post->id; ?>">
 	<input class="form-control" type="text" name="titre" value="<?= $post->titre; ?>" style="margin-bottom: 20px;">
 	<textarea class="form-control" name="contenu"  style="margin-bottom: 20px; height: 400px;"><?= $post->contenu; ?></textarea>
-	<input type="URL" name="img" style="margin-bottom: 20px;"> <br>
 	<input class="btn btn-warning" type="submit" name=""> </br><br>
 	<a href="admin.php" id="buttonAction">Retour vers la page Admin</a>
 </form>
