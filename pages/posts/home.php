@@ -15,7 +15,7 @@
 					<div class="contenuArticle">
 							<h2><a href="<?= $post->Url ?>"> <?= $post->titre ?> </a></h2>
 							<h4>Article posté par <?= $post->auteur ?> le <?= $post->date_creation_fr ?></h4>
-							<p><?= $post->contenu ?></p>
+							<p><?= $post->extrait ?></p>
 					</div>
 				</div>
 			</a>
