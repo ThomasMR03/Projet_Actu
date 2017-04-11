@@ -1,4 +1,6 @@
 <?php
+
+$date = date('Y-m-d');
 	$app = App::getInstance();
 
 	if ($_POST) {
@@ -33,7 +35,7 @@
 	<input class="form-control" type="file" name="img" accept="img/" style="margin-bottom: 20px;">
 	<input type="hidden" name="auteur" value="<?= $_SESSION['Auth']?>">
 	<textarea class="form-control" name="contenu" placeholder="Contenu Articles" style="margin-bottom: 20px;" ></textarea>
-    <input type="date" name="date_creation" style="color: black; margin-bottom: 20px;"><br>
+    <input type="hidden" name="date_creation" style="color: black; margin-bottom: 20px;" value="<?= $date ?>"><br>
 	<input class="btn btn-warning" type="submit" name="" style="margin-bottom: 80px;">
 </form>
 <a href="admin.php"  id="buttonAction">Retour vers la page Admin</a>
