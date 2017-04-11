@@ -1,9 +1,9 @@
 
 <!-- NAVBAR MOBILE UNIQUEMENT ! -->
-<div id="mobileNav" class="row" style="padding-top:10px;">
+<nav id="mobileNav" class="row" style="padding-top:10px;">
   <img src="img/logoNav.png" height="40" style="margin-top: -8px; margin-left: 5px;">
   <img onclick="navMobile()" id="mobileButton" src="img/menu.png">
-</div>
+</nav>
 
 <div  id="navmobile" class="hidden">
     <div class="row">

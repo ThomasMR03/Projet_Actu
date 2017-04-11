@@ -11,13 +11,13 @@ function navMobile(){
 
 $('#commentaire').easyPaginate({
     paginateElement: 'span',
-    elementsPerPage: 1,
+    elementsPerPage: 10,
     effect: 'climb'
 });
 
 
 $('#actuu').easyPaginate({
     paginateElement: 'span',
-    elementsPerPage: 3,
+    elementsPerPage: 6,
     effect: 'climb'
 });

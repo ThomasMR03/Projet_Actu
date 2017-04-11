@@ -5,8 +5,8 @@ $date = date("d-m-Y");
 <html lang="fr">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0" />
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0" />
+
     <link rel="icon" type="image/png" href="img/favico.png" />
     <meta name="description" content="">
     <meta name="author" content="">
@@ -22,7 +22,7 @@ $date = date("d-m-Y");
   </head>
 <body>
 
-<?php include 'navbar_mobile.php' ?>
+
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
@@ -78,14 +78,10 @@ $date = date("d-m-Y");
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/Paginate.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
 
-<script>
-$('#actuu').easyPaginate({
-    paginateElement: 'span',
-    elementsPerPage: 6,
-    effect: 'climb'
-});
-</script>
+
+<?php include 'navbar_mobile.php' ?>
 </body>
                 <!-- SCRIPTS LOADS -->
 <!-- <script type="text/javascript" hrel="scripts/bootstrap.min.js"></script>

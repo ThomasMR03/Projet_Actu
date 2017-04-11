@@ -6,7 +6,7 @@ margin: 0; padding: 0;}
 .container{margin:0; padding: 0;}
 /* CSS LOG */
 
-
+.row{margin: 0; padding: 0;}
 
 /* //////////////////////////////////////////////////////////////////////////////////////////////// */
 .header{ // Div image entete site //
@@ -25,6 +25,9 @@ margin: 0; padding: 0;}
 .visible{animation-name: pageMobile; animation-duration: .7s; animation-fill-mode: forwards;}
 
 
+#mobileNav:before{display: none; visibility: hidden;}
+#mobileNav:after{display: none; visibility: hidden;}
+
 @media screen and (max-width: 768px){
 @keyframes pageMobile{
 	0%{width: 0%; border-right: 0px solid rgb(199,211,29);}
@@ -34,7 +37,7 @@ margin: 0; padding: 0;}
 	0%{width: 60%; border-right: 3px solid rgb(199,211,29);}
 	100%{width: 0%; border-right: 0px solid rgb(199,211,29);}
 }
-#mobileNav{position:fixed; width:100%; height: 50px; background-color: rgba(0,0,0,0.9);top: 0px; left: 0px; color: white; visibility: visible; padding: 0; margin:0; font-size: 18px;  display: block; z-index: 999;}
+#mobileNav{position:fixed; width:100% !important; height: 50px; background-color: rgba(0,0,0,0.9);top: 0px; left: 0px; color: white; visibility: visible; padding: 0; margin:0; font-size: 18px;  display: block; z-index: 999;}
 #mobileButton{position: absolute;right: 5px;color: white; height: 35px; width: 45px !important; z-index: 10001; visibility: visible; width: 80px; font-size: 35px; top: 7px; text-decoration: none;}
 .mobileTxt{color: white;}
 #navmobile{position: fixed;top: 0; left: 0;height: 100%; background-color: rgba(0,0,0,1); z-index: 1000; overflow: hidden; text-align: center;visibility: visible;overflow: hidden; border-right: 0px solid rgb(199,211,29);}
