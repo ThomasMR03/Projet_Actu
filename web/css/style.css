@@ -134,7 +134,7 @@ margin: 0; padding: 0;}
 	text-align: center;
 	margin-top: 0;
 	font-family: 'Ubuntu Mono', monospace;
-	font-size: 2em;
+	font-size: 1.5em !important;
 	margin-bottom: -8px;
 }
 #article h2 a{
@@ -152,6 +152,7 @@ margin: 0; padding: 0;}
 #article p{
 	text-align: center;
 	color: black;
+	margin-bottom: 20px;
 }
 .imageArticle{
 	width: 100%;
@@ -162,6 +163,7 @@ margin: 0; padding: 0;}
 .imageArticle img{
 	width: 100%;
 	border: 1px solid  rgb(199,211,29);
+	height: 200px;
 }
 .contenuArticle{
 	width: 100%;
@@ -169,9 +171,13 @@ margin: 0; padding: 0;}
 	padding: 20px;
 	padding-top: 10px;
 	padding-bottom: 10px;
-	max-height: 200px;
+	height: 170px;
 	border-top:6px solid  rgb(199,211,29);
 }
+.contenuArticle p a{background-color: rgb(199,211,29);  position: absolute; left:10px; bottom: 5px; right: 10px; color: white;}
+
+
+
 
 #colonneGauche{background-color: rgba(0,0,0,0.7); color: white; text-align: center;}
 #colonneGauche a{
