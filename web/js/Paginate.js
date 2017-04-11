@@ -81,7 +81,7 @@ $.fn.easyPaginate = function (options) {
             htmlNav += '</div>';
             plugin.nav = $(htmlNav);
             plugin.nav.css({
-                'width': plugin.el.width()
+                'width': 'auto'
             });
             plugin.el.after(plugin.nav);
 
