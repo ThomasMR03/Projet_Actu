@@ -36,7 +36,7 @@ class PostTable extends Table
 								FROM articles
 								LEFT JOIN categories
 									ON articles.category_id = categories.id
-								ORDER BY date_creation DESC
+								ORDER BY articles.id DESC
 
 							");
 	}
@@ -54,7 +54,7 @@ class PostTable extends Table
 								FROM articles
 								LEFT JOIN categories
 									ON articles.category_id = categories.id
-								ORDER BY date_creation DESC
+								ORDER BY articles.id DESC
 								LIMIT 0, 4
 
 							");
