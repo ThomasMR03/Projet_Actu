@@ -21,6 +21,9 @@
 	}
 	$app->titre = $post->titre;
 ?>
+
+<script src="https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
+
 <div class="col-md-2">
 	
 </div>
@@ -29,7 +32,12 @@
 <form method="post" action="admin.php?p=posts.single&id=<?= $post->id; ?>">
 	<input type="hidden" name="id" value="<?= $post->id; ?>">
 	<input class="form-control" type="text" name="titre" value="<?= $post->titre; ?>" style="margin-bottom: 20px;">
-	<textarea class="form-control" name="contenu"  style="margin-bottom: 20px; height: 400px;"><?= $post->contenu; ?></textarea>
+	<textarea class="form-control" name="contenu"  style="margin-bottom: 20px; height: 400px;" id="editor1"><?= $post->contenu; ?></textarea>
+	<script>
+        // Replace the <textarea id="editor1"> with a CKEditor
+        // instance, using default configuration.
+        CKEDITOR.replace( 'editor1' );
+    </script>
 	<input class="btn btn-warning" type="submit" name=""> </br><br>
 	<a href="admin.php" id="buttonAction">Retour vers la page Admin</a>
 </form>
