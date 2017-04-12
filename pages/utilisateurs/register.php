@@ -40,9 +40,11 @@ if (isset($_POST['name'], $_POST['password'], $_POST['password_confirm'], $_POST
  <h2>Inscription</h2>
  <form action="" method="post" name="formulaire"  onsubmit="return verifForm(this)">
  	<h3>Pseudonyme</h3>
- 	<input type="text" name="name" placeholder="Votre Pseudo" onblur="verifPseudo(this)" required="required"><br>
+ 	<input type="text" name="name" placeholder="Votre Pseudo" onblur="verifPseudo(this)" required="required">
+ 	<h6 style="margin-top: -20px; color: grey;">Caractere autorisé :  Majuscules, minuscules, - , _ </h6> <br>
  	<h3>Adresse mail</h3>
  	<input type="email" required="required" name="mail" placeholder="Votre Mail" onblur="verifMail(this)" data-errormessage='{"valueMissing": "Veuillez entrer une adresse mail valid"'>
+ 	<h6 style="margin-top: -20px; color: grey; margin-bottom: 50px;">Veuillez saisir une adresse valide, une confirmation vous sera demandé</h6>
  	<h3>Mot de passe</h3>
  	<input type="password" name="password" placeholder="Votre mot de passe" required="required" onblur="verifPassword(this)"><br>
  	<input type="password" name="password_confirm" placeholder="Confirmer votre mot de passe" onblur="identiquePassword(this)" required="required"></br>
