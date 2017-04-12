@@ -21,3 +21,22 @@ $('#actuu').easyPaginate({
     elementsPerPage: 6,
     effect: 'climb'
 });
+
+
+
+
+
+
+
+$('.scroll').on('click', function() {
+  $.smoothScroll({
+    scrollElement: $('body'),
+    scrollTarget: '#actuu'
+  });
+  return false;
+});
+
+
+
+
+
