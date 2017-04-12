@@ -38,7 +38,7 @@ if (isset($_POST['name'], $_POST['password'], $_POST['password_confirm'], $_POST
 
 <div class="col-md-4" id="inscription">
  <h2>Inscription</h2>
- <form action="" method="post" name="formulaire"  onsubmit="return verifForm(this)">
+ <form action="" method="post" name="formulaire"  onsubmit="return verifForm(this)" autocomplete="off">
  	<h3>Pseudonyme</h3>
  	<input type="text" name="name" placeholder="Votre Pseudo" onblur="verifPseudo(this)" required="required">
  	<h6 style="margin-top: -20px; color: grey;">Caractere autorisé :  Majuscules, minuscules, - , _ </h6> <br>
