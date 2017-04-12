@@ -35,6 +35,7 @@
 	</div>
 	
 	<div class="commentaire">
+	<div id="scroll"></div>
 	<h4>Commentaire(s) :</h4>
 
 	<div id="commentaire">

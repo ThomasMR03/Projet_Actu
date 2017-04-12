@@ -4,6 +4,7 @@
 	</div>
 	<div class="col-md-7" style="background:rgba(0,0,0,0.7);">
 		<div class="row">
+		<div id="scroll"></div>
 		<div class="col-md-12"><h1 class="actu" style="padding-left: 30px;"><a class="actu2" href="index.php">Actualité</a></h1></div>
 		</div>
 		<div class="row" id="actuu">
