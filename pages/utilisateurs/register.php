@@ -1,9 +1,11 @@
 <?php
 $date = date('Y-m-d');
 
-if ($_POST) {
-if (isset($_POST['name'], $_POST['password'], $_POST['date_de_naissance'], $_POST['mail'], $_POST['date_inscription']))
- {
+if (!empty($_POST)) {
+if (isset($_POST['name'], $_POST['password'], $_POST['date_de_naissance'], $_POST['mail'], $_POST['date_inscription'])){
+	if(empty($_POST['name']) || !preg_match('/^[a-zA-Z0-9_]+$/', $_POST['name'])){
+			echo "Votre pseudo n'est pas valide (alpha_numerique)"; //Echo pour pseudo non valide
+		}else{
  	$req=App::getInstance()->getTable('User')->create([
 
  	'name' => $_POST['name'],
@@ -11,15 +13,13 @@ if (isset($_POST['name'], $_POST['password'], $_POST['date_de_naissance'], $_POS
  	'mail' => $_POST['mail'],
  	'date_inscription' => $_POST['date_inscription'],
  	'date_de_naissance' => $_POST['date_de_naissance']]);
- 	
  	if ($req) {
 				header('location: index.php?p=Login');
-				?>
-				<?php
-
+				}
+		}
  	}
  }
- } ?>
+?>
  	
 
 
