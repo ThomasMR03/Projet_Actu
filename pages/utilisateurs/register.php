@@ -38,13 +38,14 @@ if (isset($_POST['name'], $_POST['password'], $_POST['password_confirm'], $_POST
 
 <div class="col-md-4" id="inscription">
  <h2>Inscription</h2>
- <form action="" method="post">
- 	<h3>Pseudonyme & Mail</h3>
- 	<input type="text" name="name" placeholder="Votre Pseudo"><br>
- 	<input type="text" name="mail" placeholder="Votre Mail">
+ <form action="" method="post" name="formulaire"  onsubmit="return verifForm(this)">
+ 	<h3>Pseudonyme</h3>
+ 	<input type="text" name="name" placeholder="Votre Pseudo" onblur="verifPseudo(this)" required="required"><br>
+ 	<h3>Adresse mail</h3>
+ 	<input type="email" required="required" name="mail" placeholder="Votre Mail" onblur="verifMail(this)" data-errormessage='{"valueMissing": "Veuillez entrer une adresse mail valid"'>
  	<h3>Mot de passe</h3>
- 	<input type="password" name="password" placeholder="Votre mot de passe"><br>
- 	<input type="password" name="password_confirm" placeholder="Confirmer votre mot de passe"></br>
+ 	<input type="password" name="password" placeholder="Votre mot de passe" required="required" onblur="verifPassword(this)"><br>
+ 	<input type="password" name="password_confirm" placeholder="Confirmer votre mot de passe" onblur="identiquePassword(this)" required="required"></br>
  	<h3>Date de naissance</h3>
  	<input type="date" name="date_de_naissance"><br>
  	<input type="hidden" name="date_inscription" value="<?= $date ?>">
