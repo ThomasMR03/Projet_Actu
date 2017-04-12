@@ -38,7 +38,7 @@ $('.scroll').on('click', function() {
 
 function verifPseudo(champ)
 {
-  var myPseudo = new RegExp("^[a-z0-9._-]{2,50}$");
+  var myPseudo = new RegExp("^[a-zA-Z0-9._-]{2,50}$");
    if(champ.value.length < 2 || champ.value.length > 20 || !myPseudo.test(champ.value))
    {
       champ.style.backgroundColor = "#fba";
