@@ -59,23 +59,23 @@ $.fn.easyPaginate = function (options) {
             htmlNav = '<div class="easyPaginateNav">';
             
             if(plugin.settings.firstButton) {
-                htmlNav += '<a href="#'+plugin.settings.hashPage+':1" title="First page" rel="1" class="first">'+plugin.settings.firstButtonText+'</a>';
+                htmlNav += '<a href="#'+plugin.settings.hashPage+':1" title="First page" rel="1" class="scroll first">'+plugin.settings.firstButtonText+'</a>';
             }
             
             if(plugin.settings.prevButton) {
-                htmlNav += '<a href="" title="Previous" rel="" class="prev">'+plugin.settings.prevButtonText+'</a>';
+                htmlNav += '<a href="" title="Previous" rel="" class="scroll prev">'+plugin.settings.prevButtonText+'</a>';
             }
             
             for(i = 1;i <= plugin.settings.pages;i++) {
-                htmlNav += '<a href="#'+plugin.settings.hashPage+':'+i+'" title="Page '+i+'" rel="'+i+'" class="page">'+i+'</a>';
+                htmlNav += '<a href="#'+plugin.settings.hashPage+':'+i+'" title="Page '+i+'" rel="'+i+'" class="scroll page">'+i+'</a>';
             };
             
             if(plugin.settings.nextButton) {
-                htmlNav += '<a href="" title="Next" rel="" class="next">'+plugin.settings.nextButtonText+'</a>';
+                htmlNav += '<a href="" title="Next" rel="" class="scroll next">'+plugin.settings.nextButtonText+'</a>';
             }
             
             if(plugin.settings.lastButton) {
-                htmlNav += '<a href="#'+plugin.settings.hashPage+':'+plugin.settings.pages+'" title="Last page" rel="'+plugin.settings.pages+'" class="last">'+plugin.settings.lastButtonText+'</a>';
+                htmlNav += '<a href="#'+plugin.settings.hashPage+':'+plugin.settings.pages+'" title="Last page" rel="'+plugin.settings.pages+'" class="scroll last">'+plugin.settings.lastButtonText+'</a>';
             }
             
             htmlNav += '</div>';
