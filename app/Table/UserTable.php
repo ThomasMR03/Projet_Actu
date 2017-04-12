@@ -20,4 +20,16 @@ class UserTable extends Table
 							  FROM   users");
 	}
 
+
+
+	public function informations()
+	{
+		return $this->query(" SELECT *
+								FROM users
+								LEFT JOIN articles
+									ON articles_id = articles.id
+								WHERE articles.id = ?
+								ORDER BY commentaires.id DESC
+							", [$category_id], $one);
+	}
 }

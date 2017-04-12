@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Mer 12 Avril 2017 à 16:57
+-- Généré le :  Lun 10 Avril 2017 à 15:25
 -- Version du serveur :  10.1.19-MariaDB
 -- Version de PHP :  7.0.9
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `articles` (
   `id` int(11) NOT NULL,
-  `titre` varchar(50) CHARACTER SET utf8 NOT NULL,
+  `titre` varchar(25) CHARACTER SET utf8 NOT NULL,
   `contenu` longtext NOT NULL,
   `date_creation` date NOT NULL,
   `category_id` int(11) DEFAULT NULL,
@@ -48,8 +48,7 @@ INSERT INTO `articles` (`id`, `titre`, `contenu`, `date_creation`, `category_id`
 (15, 'Test Image', 'Test', '2017-04-03', 0, 'CaptainFire03', 'dofus_test.jpg'),
 (16, 'Test', 'Test', '2017-04-03', 0, 'CaptainFire03', 'dofus_test.jpg'),
 (17, 'Test Page', 'Test Page', '2017-04-06', 1, 'CaptainFire03', 'dofus_test.jpg'),
-(18, 'Test Image', 'Bla bla bla', '2017-04-10', NULL, 'CaptainFire03', 'dofus_test.jpg'),
-(26, 'La boutique', '<p>La boutique &agrave; &eacute;tait mise &agrave; jours.</p>\r\n\r\n<p>N&#39;h&eacute;sitez pas &agrave; aller la consult&eacute; sur le site internet de Dofus</p>\r\n\r\n<p><a href="https://secure.dofus.com/fr/boutique">Dofus Boutique</a></p>\r\n', '2017-04-11', NULL, 'CaptainFire03', 'actu2.jpg');
+(18, 'Test Image', 'Bla bla bla', '2017-04-10', NULL, 'CaptainFire03', 'dofus_test.jpg');
 
 -- --------------------------------------------------------
 
@@ -153,7 +152,6 @@ CREATE TABLE `users` (
   `mail` varchar(100) NOT NULL,
   `date_inscription` date NOT NULL,
   `membre_rang` enum('visiteur','inscrit','modo','admin') DEFAULT 'inscrit',
-  `img` varchar(255) NOT NULL,
   `message` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -161,10 +159,10 @@ CREATE TABLE `users` (
 -- Contenu de la table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `password`, `date_de_naissance`, `mail`, `date_inscription`, `membre_rang`, `img`, `message`) VALUES
-(1, 'CaptainFire03', 'c955a0060768c59720af5c02a18797717a4aeda1', '1995-10-19', 'thomas.face03@gmail.com', '2017-04-10', 'admin', 'profil.png', 0),
-(2, 'Seizuko', 'f8728f2c3d5b7e7529ebeadc434d5db085fa47ee', '1995-03-22', '', '2017-04-10', 'admin', '', 0),
-(4, 'TestAdmin', '98aadb37083eddd855c27feccb15dc8c5b127fd0', '1995-10-19', '', '2017-04-10', 'inscrit', '', 0);
+INSERT INTO `users` (`id`, `name`, `password`, `date_de_naissance`, `mail`, `date_inscription`, `membre_rang`, `message`) VALUES
+(1, 'CaptainFire03', 'c955a0060768c59720af5c02a18797717a4aeda1', '1995-10-19', 'thomas.face03@gmail.com', '2017-04-10', 'admin', 0),
+(2, 'Seizuko', 'f8728f2c3d5b7e7529ebeadc434d5db085fa47ee', '1995-03-22', '', '2017-04-10', 'admin', 0),
+(4, 'TestAdmin', '98aadb37083eddd855c27feccb15dc8c5b127fd0', '1995-10-19', '', '2017-04-10', 'inscrit', 0);
 
 --
 -- Index pour les tables exportées
@@ -220,7 +218,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `articles`
 --
 ALTER TABLE `articles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT pour la table `categories`
 --
