@@ -39,8 +39,8 @@ if (isset($_POST['name'], $_POST['password'], $_POST['password_confirm'], $_POST
  	<input type="text" name="name" placeholder="Votre Pseudo"><br>
  	<input type="text" name="mail" placeholder="Votre Mail">
  	<h3>Mot de passe</h3>
- 	<input type="text" name="password" placeholder="Votre mot de passe"><br>
- 	<input type="text" name="password_confirm" placeholder="Confirmer votre mot de passe"></br>
+ 	<input type="password" name="password" placeholder="Votre mot de passe"><br>
+ 	<input type="password" name="password_confirm" placeholder="Confirmer votre mot de passe"></br>
  	<h3>Date de naissance</h3>
  	<input type="date" name="date_de_naissance"><br>
  	<input type="hidden" name="date_inscription" value="<?= $date ?>">
