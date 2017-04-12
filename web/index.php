@@ -27,6 +27,8 @@ if ($page==='home') {
 
 }elseif ($page==='utilisateurs') {
 	require ROOT.'/pages/utilisateurs/register.php';
+}elseif ($page==='utilisateurs.profil') {
+	require ROOT.'/pages/utilisateurs/profil.php';
 }
 
 elseif ($page==='forum') {
