@@ -9,6 +9,9 @@ if (isset($_POST['name'], $_POST['password'], $_POST['password_confirm'], $_POST
 	if(empty($_POST['password']) || $_POST['password']!=$_POST['password_confirm']){
 			echo "Les mots de passe ne correspondent pas"; //Echo pour mot de passe non valide
 		}else{
+	if(empty($_POST['mail']) || !filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL)){
+			echo "Votre mail n'est pas valide."; //Echo pour mail non valide
+		}else{
  	$req=App::getInstance()->getTable('User')->create([
 
  	'name' => $_POST['name'],
@@ -19,6 +22,7 @@ if (isset($_POST['name'], $_POST['password'], $_POST['password_confirm'], $_POST
  	if ($req) {
 				header('location: index.php?p=Login');
 				}
+			}
 		}
 	}
  	}
