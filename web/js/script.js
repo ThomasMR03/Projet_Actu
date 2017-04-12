@@ -27,16 +27,11 @@ $('#actuu').easyPaginate({
 
 
 
-
 $('.scroll').on('click', function() {
   $.smoothScroll({
-    scrollElement: $('body'),
-    scrollTarget: '#actuu'
+    scrollTarget: '#scroll'
   });
   return false;
 });
-
-
-
 
 
