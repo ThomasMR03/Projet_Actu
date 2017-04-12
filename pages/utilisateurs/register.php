@@ -32,7 +32,6 @@ if (isset($_POST['name'], $_POST['password'], $_POST['password_confirm'], $_POST
 
 
 
-
 <div class="row" style="width: 99%;">
 <div class="col-md-4"></div>
 
