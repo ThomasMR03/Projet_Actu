@@ -42,10 +42,12 @@ function verifPseudo(champ)
    if(champ.value.length < 2 || champ.value.length > 20 || !myPseudo.test(champ.value))
    {
       champ.style.backgroundColor = "#fba";
+      champ.style.border = "3px solid red";
    }
    else
    {
       champ.style.backgroundColor = "#BEF781";
+      champ.style.border = "3px solid green";
    }
 }
 
@@ -56,10 +58,12 @@ function verifMail(champ)
    if(!regex.test(champ.value))
    {
      champ.style.backgroundColor = "#fba";
+     champ.style.border = "3px solid red";
    }
    else
    {
      champ.style.backgroundColor = "#BEF781";
+     champ.style.border = "3px solid green";
    }
 }
 
@@ -68,10 +72,12 @@ function verifPassword(champ)
    if(champ.value.length < 2 || champ.value.length > 50)
    {
       champ.style.backgroundColor = "#fba";
+      champ.style.border = "3px solid red";
    }
    else
    {
       champ.style.backgroundColor = "#BEF781";
+      champ.style.border = "3px solid green";
    }
 }
 
@@ -80,9 +86,11 @@ function identiquePassword(champ)
 {
 if(document.formulaire.password.value != document.formulaire.password_confirm.value) {
   champ.style.backgroundColor = "#fba";
+  champ.style.border = "3px solid red";
 }
 else{
   champ.style.backgroundColor = "#BEF781";
+  champ.style.border = "3px solid green";
 }
 }
 
