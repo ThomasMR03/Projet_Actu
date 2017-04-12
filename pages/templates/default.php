@@ -47,6 +47,7 @@ $date = date("d-m-Y");
 
       <?php if(isset($_SESSION['Auth'])): ?> <!-- Si connecté affiche Bonjour Pseudo, sinon affiche Visiteur -->
         <li><a style="color: white;">Bonjour <?= $_SESSION['Auth']; ?></a></li>
+        <li><a href="index.php?p=utilisateurs.profil&name=<?= $_SESSION['Auth'] ?>">Mon Compte</a></li>
         <?php else : ?>
           <li><a style="color: white;"> Vous n'êtes pas connecté</a></li>
           <li><a href="index.php?p=utilisateurs"><span class="glyphicon glyphicon-user"></span> S'inscrire</a></li>
