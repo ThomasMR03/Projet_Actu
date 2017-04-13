@@ -40,10 +40,10 @@ $utilisateurs = App::getInstance()->getTable('User')->find($_SESSION['Id']);
       </li> -->
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <?php if(isset($_SESSION['Auth']) & $utilisateurs->membre_rang == 'admin'): ?> <!-- Si connecté Admin affiche Panel Admin, sinon affiche rien -->
-
+      <?php if(isset($_SESSION['Auth'])): ?> <!-- Si connecté Admin affiche Panel Admin, sinon affiche rien -->
+          <?php if($utilisateurs->membre_rang == 'admin'): ?>
        <li><a href="admin.php"><span class="glyphicon glyphicon-lock"></span> Panel Admin</a></li>
-      
+          <?php else : ?><?php endif; ?>
        <?php else : ?>
        <?php endif; ?>
 
