@@ -9,7 +9,7 @@ $utilisateurs = App::getInstance()->getTable('User')->find($_SESSION['Id']);
 
 if (!empty($_POST['mail'])) {
 $req=App::getInstance()->getTable('User')->update($_SESSION['Id'],[
- 	'mail' => $_POST['mail'],
+ 	'mail' => htmlspecialchars ($_POST['mail']),
 ]); 
 if ($req) {
 				header('location: index.php?p=utilisateurs.profil');
@@ -18,7 +18,7 @@ if ($req) {
 
 if (!empty($_POST['image'])) {
 $req=App::getInstance()->getTable('User')->update($_SESSION['Id'],[
- 	'image' => $_POST['image'],
+ 	'image' => htmlspecialchars($_POST['image']),
 ]);
 if ($req) {
 				header('location: index.php?p=utilisateurs.profil');
@@ -26,7 +26,7 @@ if ($req) {
 } 	
 
 if (!empty($_POST['password'])) {
-$req=App::getInstance()->getTable('User')->update($_SESSION['Id'], ['password' => sha1(($_POST['password']))]);
+$req=App::getInstance()->getTable('User')->update($_SESSION['Id'], ['password' => sha1(htmlspecialchars($_POST['password']))]);
 if ($req) {
 	header('location: index.php?p=utilisateurs.profil');
 }

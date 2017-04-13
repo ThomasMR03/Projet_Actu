@@ -3,10 +3,10 @@
 	if ($_POST) {
 		if (!empty($_POST['commentaire'] && $_POST['articles_id'] && $_POST['auteurCommentaire'])) {
 			$req = $app->getTable('commentaire')->create(
-				["commentaire"=>$_POST['commentaire'],
-				"articles_id"=>$_POST['articles_id'],
-				"users_id"=>$_POST['users_id'],
-				"auteurCommentaire"=>$_POST['auteurCommentaire']
+				["commentaire"=>htmlspecialchars($_POST['commentaire']),
+				"articles_id"=>htmlspecialchars($_POST['articles_id']),
+				"users_id"=>htmlspecialchars($_POST['users_id']),
+				"auteurCommentaire"=>htmlspecialchars($_POST['auteurCommentaire'])
 				]);
 			if ($req) {
 				////message Flash

@@ -14,11 +14,11 @@ if (isset($_POST['name'], $_POST['password'], $_POST['password_confirm'], $_POST
 		}else{
  	$req=App::getInstance()->getTable('User')->create([
 
- 	'name' => $_POST['name'],
- 	'password' => sha1(($_POST['password'])),
- 	'mail' => $_POST['mail'],
- 	'date_inscription' => $_POST['date_inscription'],
- 	'date_de_naissance' => $_POST['date_de_naissance']]);
+ 	'name' => htmlspecialchars($_POST['name']),
+ 	'password' => sha1((htmlspecialchars($_POST['password']))),
+ 	'mail' => htmlspecialchars($_POST['mail']),
+ 	'date_inscription' => htmlspecialchars($_POST['date_inscription']),
+ 	'date_de_naissance' => htmlspecialchars($_POST['date_de_naissance'])]);
  	if ($req) {
 				header('location: index.php?p=Login');
 				}
