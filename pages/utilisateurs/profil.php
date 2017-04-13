@@ -6,6 +6,7 @@
 
 $utilisateurs = App::getInstance()->getTable('User')->find($_SESSION['Id']);
 
+
 if (!empty($_POST['mail'])) {
 $req=App::getInstance()->getTable('User')->update($_SESSION['Id'],[
  	'mail' => $_POST['image'],
@@ -22,7 +23,7 @@ if ($req) {
 } 	
 
 
-/*var_dump($utilisateurs)*/
+/*var_dump($images)*/
 ?>
 
 
@@ -62,15 +63,13 @@ if ($req) {
 
 		<form action="" method="post" name="formulaire">
 			<h6>Changer mon image de profil</h6>
-			<input name="image" type="radio" value="profil1"><img src="img/imageProfil/profil1.png" width="50">
-			<input name="image" type="radio" value="profil2"><img src="img/imageProfil/profil2.png" width="50">
-			<input name="image" type="radio" value="profil3"><img src="img/imageProfil/profil3.png" width="50">
-			<input name="image" type="radio" value="profil4"><img src="img/imageProfil/profil4.png" width="50">
-			<input name="image" type="radio" value="profil5"><img src="img/imageProfil/profil5.png" width="50">
-			<input name="image" type="radio" value="profil6"><img src="img/imageProfil/profil6.png" width="50">
-			<input name="image" type="radio" value="profil7"><img src="img/imageProfil/profil7.png" width="50">
-
-			<button type="submit">Valider</button>
+			<input name="image" type="image" value="profil1" id="profil1" src="img/imageProfil/profil1.png" width="50">
+			<input name="image" type="image" value="profil2" id="profil2" src="img/imageProfil/profil2.png" width="50">
+			<input name="image" type="image" value="profil3" id="profil3" src="img/imageProfil/profil3.png" width="50">
+			<input name="image" type="image" value="profil4" id="profil4" src="img/imageProfil/profil4.png" width="50">
+			<input name="image" type="image" value="profil5" id="profil5" src="img/imageProfil/profil5.png" width="50">
+			<input name="image" type="image" value="profil6" id="profil6" src="img/imageProfil/profil6.png" width="50">
+			<input name="image" type="image" value="profil7" id="profil7" src="img/imageProfil/profil7.png" width="50">
 		</form>
 	</div>
 
