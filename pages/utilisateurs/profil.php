@@ -11,6 +11,9 @@ if (!empty($_POST['mail'])) {
 $req=App::getInstance()->getTable('User')->update($_SESSION['Id'],[
  	'mail' => $_POST['mail'],
 ]); 
+if ($req) {
+				header('location: index.php?p=utilisateurs.profil');
+				}
 }
 
 if (!empty($_POST['image'])) {
