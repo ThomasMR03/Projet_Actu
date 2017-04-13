@@ -110,3 +110,24 @@ function verifForm(f)
       return false;
    }
 }
+
+function formMail() {
+  if ($("#formMail").hasClass( "formMailHidden" )) {
+    $("#formMail").attr('class','formMailvisible');
+  }else if ($( "#formMail" ).hasClass( "formMailCache" )){
+    $("#formMail").attr('class','formMailvisible');
+  }else{
+    $("#formMail").attr('class','formMailCache');
+  }
+}
+
+function formImage() {
+  if ($("#formImage").hasClass( "formImageHidden" )) {
+    $("#formImage").attr('class','formImagevisible');
+  }else if ($( "#formImage" ).hasClass( "formImageCache" )){
+    $("#formImage").attr('class','formImagevisible');
+  }else{
+    $("#formImage").attr('class','formImageCache');
+  }
+}
+

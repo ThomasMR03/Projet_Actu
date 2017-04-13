@@ -283,5 +283,41 @@ footer{width: 100%; height: 200px; margin-top: 50px; background-color: rgba(0,0,
 /* Page utilisateurs */
 
 #pagePerso{background-color: rgba(0,0,0,0.8); padding: 30px; color: white;}
-#imageProfilPerso{border: 2px solid rgb(199,211,29); padding: 0;}
-#imageProfilPerso img{width: 100%;}
+#imageProfilPerso{ padding: 0;}
+#imageProfilPerso img{width: 100%;border: 2px solid rgb(199,211,29);}
+
+
+
+@keyframes formMailVisible{
+	0%{height: 0px;}
+	100%{height: 100px;}
+}
+@keyframes formMailHidden{
+	0%{height: 100px;}
+	100%{height: 0px;}
+}
+
+#formMail{width: 100%; overflow: hidden;}
+.formMailHidden{height: 0px;}
+.formMailCache{animation-name: formMailHidden; animation-duration: .5s; animation-fill-mode: forwards;}
+.formMailVisible{animation-name: formMailVisible; animation-duration: .5s; animation-fill-mode: forwards; animation-timing-function: linear;}
+
+#infoProfil{color: rgb(199,211,29);}
+#buttonFormMail{background-color:rgb(199,211,29); border: none; margin-bottom: 5px; height: 26px; }
+
+@keyframes formImageVisible{
+	0%{height: 0%;}
+	100%{height: 100%;}
+}
+@keyframes formImageHidden{
+	0%{height: 100%;}
+	100%{height: 0%;}
+}
+#buttonFormImage{background-color:rgb(199,211,29); border: none; margin-bottom: 20px; height: 26px; width: 100%;}
+#formImage{width: 100%; overflow: hidden;}
+.formImageHidden{height: 0px;}
+.formImageCache{animation-name: formMailHidden; animation-duration: .5s; animation-fill-mode: forwards;}
+.formImageVisible{animation-name: formMailVisible; animation-duration: .5s; animation-fill-mode: forwards; animation-timing-function: linear;}
+
+#profilInfoPerso{margin-top: 50px;}
+#profilInfoPerso h6{font-size: 1.3em}
