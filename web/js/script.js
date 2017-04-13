@@ -115,7 +115,7 @@ function formMail() {
   if ($("#formMail").hasClass( "formMailHidden" )) {
     $("#formMail").attr('class','formMailvisible');
   }else if ($( "#formMail" ).hasClass( "formMailCache" )){
-    $("#formMail").attr('class','formMailvisible');
+    $("#formMail").attr('class','formMailVisible');
   }else{
     $("#formMail").attr('class','formMailCache');
   }
@@ -128,6 +128,16 @@ function formImage() {
     $("#formImage").attr('class','formImagevisible');
   }else{
     $("#formImage").attr('class','formImageCache');
+  }
+}
+
+function formPassword() {
+  if ($("#formPassword").hasClass( "formPasswordHidden" )) {
+    $("#formPassword").attr('class','formPasswordVisible');
+  }else if ($( "#formPassword" ).hasClass( "formPasswordCache" )){
+    $("#formPassword").attr('class','formImagevisible');
+  }else{
+    $("#formPassword").attr('class','formPasswordCache');
   }
 }
 
