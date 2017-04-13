@@ -46,7 +46,7 @@
 	<span>
 	<div class="commentairePersonne">
 	<div class="col-md-1" id="imageProfilPerso" style="margin-right: 10px;">
-	<img src="img/imageProfil/<?= $last->image ?>">
+	<img src="img/imageProfil/<?= $last->image ?>.png">
 	</div>
 	<h5><?= $last->auteurCommentaire ?></h5>
 	<p><?= $last->commentaire ?></p>
