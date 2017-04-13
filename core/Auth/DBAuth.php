@@ -19,7 +19,6 @@ class DBAuth
             if ($user->password === sha1($password)) {
                 $_SESSION['Auth'] = $user->name;
                 $_SESSION['Id'] = $user->id;
-                $_SESSION['Rang'] = $user->membre_rang;
                 return true;
             }
         }
@@ -29,13 +28,10 @@ class DBAuth
     public function logged()
     {
         return isset($_SESSION['Auth']);
-        return isset($_SESSION['Rang']);
-        return isset($_SESSION['Id']);
     }    
     public function getUserID(){
         if ($this->logged()) {
             return $_SESSION['Auth'];
-            return $_SESSION['Rang'];
         }else{
             return false;
         }

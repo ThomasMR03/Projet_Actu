@@ -1,5 +1,6 @@
 <?php
 $date = date("d-m-Y");
+$utilisateurs = App::getInstance()->getTable('User')->find($_SESSION['Id']);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -23,7 +24,6 @@ $date = date("d-m-Y");
 <body>
 
 
-
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -40,10 +40,12 @@ $date = date("d-m-Y");
       </li> -->
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <?php if(isset($_SESSION['Auth']) & isset($_SESSION['Rang']) == 'admin'): ?> <!-- Si connecté Admin affiche Panel Admin, sinon affiche rien -->
+      <?php if(isset($_SESSION['Auth']) & $utilisateurs->membre_rang == 'admin'): ?> <!-- Si connecté Admin affiche Panel Admin, sinon affiche rien -->
+
        <li><a href="admin.php"><span class="glyphicon glyphicon-lock"></span> Panel Admin</a></li>
-   <?php else : ?>
-   <?php endif; ?>
+      
+       <?php else : ?>
+       <?php endif; ?>
 
       <?php if(isset($_SESSION['Auth'])): ?> <!-- Si connecté affiche Bonjour Pseudo, sinon affiche Visiteur -->
         <li><a style="color: white;">Bonjour <?= $_SESSION['Auth']; ?></a></li>
@@ -71,6 +73,7 @@ $date = date("d-m-Y");
       </div>
 
   </div><!-- /.container -->
+
 
 
 
