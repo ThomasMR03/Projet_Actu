@@ -333,6 +333,7 @@ footer{width: 100%; height: 200px; margin-top: 50px; background-color: rgba(0,0,
 }
 
 #formPassword{width: 100%; overflow: hidden;}
+#formPassword input{color: black;}
 .formPasswordHidden{height: 0px;}
 .formPasswordCache{animation-name: formPasswordHidden; animation-duration: .5s; animation-fill-mode: forwards;}
 .formPasswordVisible{animation-name: formPasswordVisible; animation-duration: .5s; animation-fill-mode: forwards; animation-timing-function: linear;}
