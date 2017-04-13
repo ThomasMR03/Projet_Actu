@@ -37,7 +37,7 @@ if ($req) {
 		<div class="row">
 
 		<div class="col-md-3" id="imageProfilPerso">
-			<img src="img/imageProfil/<?= $utilisateurs->image ?>.png">
+			<img src="img/imageProfil/<?= $utilisateurs->image ?>">
 		</div>
 
 		<div class="col-md-9">
@@ -63,13 +63,9 @@ if ($req) {
 
 		<form action="" method="post" name="formulaire">
 			<h6>Changer mon image de profil</h6>
-			<input name="image" type="image" value="profil1" id="profil1" src="img/imageProfil/profil1.png" width="50">
-			<input name="image" type="image" value="profil2" id="profil2" src="img/imageProfil/profil2.png" width="50">
-			<input name="image" type="image" value="profil3" id="profil3" src="img/imageProfil/profil3.png" width="50">
-			<input name="image" type="image" value="profil4" id="profil4" src="img/imageProfil/profil4.png" width="50">
-			<input name="image" type="image" value="profil5" id="profil5" src="img/imageProfil/profil5.png" width="50">
-			<input name="image" type="image" value="profil6" id="profil6" src="img/imageProfil/profil6.png" width="50">
-			<input name="image" type="image" value="profil7" id="profil7" src="img/imageProfil/profil7.png" width="50">
+			<?php foreach (App::getInstance()->getTable('Image')->all() as $image) : ?>
+			<input name="image" type="image" value="<?= $image->images ?>" id="profil1" src="img/imageProfil/<?= $image->images ?>" width="50">
+		<?php endforeach ?>
 		</form>
 	</div>
 
