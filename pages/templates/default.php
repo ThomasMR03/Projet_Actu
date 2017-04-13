@@ -48,7 +48,7 @@ $utilisateurs = App::getInstance()->getTable('User')->find($_SESSION['Id']);
        <?php endif; ?>
 
       <?php if(isset($_SESSION['Auth'])): ?> <!-- Si connecté affiche Bonjour Pseudo, sinon affiche Visiteur -->
-        <li><a style="color: white;">Bonjour <?= $_SESSION['Auth']; ?></a></li>
+        <li><a style="color: white;"><img src="img/imageProfil/<?= $utilisateurs->image?>.png" id="imageNav"> Bonjour <?= $_SESSION['Auth']; ?></a></li>
         <li><a href="index.php?p=utilisateurs.profil&name=<?= $_SESSION['Auth'] ?>">Mon Compte</a></li>
         <?php else : ?>
           <li><a style="color: white;"> Vous n'êtes pas connecté</a></li>
@@ -75,7 +75,7 @@ $utilisateurs = App::getInstance()->getTable('User')->find($_SESSION['Id']);
   </div><!-- /.container -->
 
 
-
+<?php var_dump($utilisateurs) ?>
 
 <footer></footer>
 
