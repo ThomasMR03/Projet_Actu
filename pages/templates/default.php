@@ -75,8 +75,6 @@ $utilisateurs = App::getInstance()->getTable('User')->find($_SESSION['Id']);
   </div><!-- /.container -->
 
 
-<?php var_dump($utilisateurs) ?>
-
 <footer></footer>
 
 
