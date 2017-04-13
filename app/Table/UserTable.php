@@ -20,16 +20,16 @@ class UserTable extends Table
 							  FROM   users");
 	}
 
-
-
-	public function informations()
+	public function find($id)
 	{
-		return $this->query(" SELECT *
-								FROM users
-								LEFT JOIN articles
-									ON articles_id = articles.id
-								WHERE articles.id = ?
-								ORDER BY commentaires.id DESC
-							", [$category_id], $one);
+		return $this->query("SELECT users.id,
+									 users.name,
+									 users.password,
+									 users.mail,
+									 DATE_FORMAT(date_inscription, '%d/%m/%Y') as date_inscription_fr,
+									 DATE_FORMAT(date_de_naissance, '%d/%m/%Y') as date_naissance_fr,
+									 users.membre_rang,
+									 users.image
+									 FROM users WHERE id = ?",[$id], true);
 	}
 }
