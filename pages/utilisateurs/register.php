@@ -15,7 +15,7 @@ if (isset($_POST['name'], $_POST['password'], $_POST['password_confirm'], $_POST
  	$req=App::getInstance()->getTable('User')->create([
 
  	'name' => $_POST['name'],
- 	'password' => password_hash($_POST['password'], PASSWORD_BCRYPT),
+ 	'password' => sha1(($_POST['password'])),
  	'mail' => $_POST['mail'],
  	'date_inscription' => $_POST['date_inscription'],
  	'date_de_naissance' => $_POST['date_de_naissance']]);
