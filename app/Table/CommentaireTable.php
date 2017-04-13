@@ -15,6 +15,8 @@ class CommentaireTable extends Table
 								FROM commentaires
 								LEFT JOIN articles
 									ON articles_id = articles.id
+								LEFT JOIN users
+									ON commentaires.users_id = users.id
 								WHERE articles.id = ?
 								ORDER BY commentaires.id DESC
 							", [$category_id], $one);
