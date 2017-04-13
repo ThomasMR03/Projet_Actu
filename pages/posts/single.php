@@ -5,6 +5,7 @@
 			$req = $app->getTable('commentaire')->create(
 				["commentaire"=>$_POST['commentaire'],
 				"articles_id"=>$_POST['articles_id'],
+				"users_id"=>$_POST['users_id'],
 				"auteurCommentaire"=>$_POST['auteurCommentaire']
 				]);
 			if ($req) {
@@ -45,7 +46,7 @@
 	<span>
 	<div class="commentairePersonne">
 	<div class="col-md-1" id="imageProfilPerso" style="margin-right: 10px;">
-	<img src="img/imageProfil/<?= $utilisateurs->image ?>">
+	<img src="img/imageProfil/<?= $last->image ?>">
 	</div>
 	<h5><?= $last->auteurCommentaire ?></h5>
 	<p><?= $last->commentaire ?></p>
@@ -57,6 +58,8 @@
 
 
 
+
+
 <?php if(isset($_SESSION['Auth'])): ?> <!-- Si connecté affiche form commentaire, sinon affiche Redirection -->
         <div class="commentaireTexte">
 			<h2>Ajouter un commentaire</h2>
@@ -64,6 +67,7 @@
 					<input type="hidden" name="auteurCommentaire" value="<?= $_SESSION['Auth']?>">
 					<textarea class="form-control" name="commentaire" placeholder="Ajouter votre commentaire" ></textarea>
 					<input type="hidden" name="articles_id" value="<?= $_GET['id'] ?>">
+					<input type="hidden" name="users_id" value="<?= $_SESSION['Id'] ?>">
 					<input class="btn btn-warning" type="submit" name="" style="margin-top: 20px;">
 				</form>
 		</div>
