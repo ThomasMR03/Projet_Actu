@@ -64,7 +64,7 @@ if ($req) {
 			<button onclick="formMail()" id="buttonFormMail">Modifier</button>
 
 			<form action="" method="post" name="formulaire" id="formMail" class="formMailHidden">
-				<input type="email" required="required" name="mail" placeholder="Nouvelle adresse Mail" onblur="verifMail(this)" data-errormessage='{"valueMissing": "Veuillez entrer une adresse mail valid"' style="float: left; width: 70%;">
+				<input type="email" required="required" name="mail" placeholder="Nouvelle adresse Mail" onblur="verifMail(this)" data-errormessage='{"valueMissing": "Veuillez entrer une adresse mail valid"' style="float: left; width: 70%; color: black;">
 				<button type="submit" id="buttonFormMail">Valider</button>
 			</form>
 		</div>
