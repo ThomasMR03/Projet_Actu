@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Lun 10 Avril 2017 à 15:25
+-- Généré le :  Jeu 13 Avril 2017 à 10:52
 -- Version du serveur :  10.1.19-MariaDB
 -- Version de PHP :  7.0.9
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `articles` (
   `id` int(11) NOT NULL,
-  `titre` varchar(25) CHARACTER SET utf8 NOT NULL,
+  `titre` varchar(50) CHARACTER SET utf8 NOT NULL,
   `contenu` longtext NOT NULL,
   `date_creation` date NOT NULL,
   `category_id` int(11) DEFAULT NULL,
@@ -48,7 +48,8 @@ INSERT INTO `articles` (`id`, `titre`, `contenu`, `date_creation`, `category_id`
 (15, 'Test Image', 'Test', '2017-04-03', 0, 'CaptainFire03', 'dofus_test.jpg'),
 (16, 'Test', 'Test', '2017-04-03', 0, 'CaptainFire03', 'dofus_test.jpg'),
 (17, 'Test Page', 'Test Page', '2017-04-06', 1, 'CaptainFire03', 'dofus_test.jpg'),
-(18, 'Test Image', 'Bla bla bla', '2017-04-10', NULL, 'CaptainFire03', 'dofus_test.jpg');
+(18, 'Test Image', 'Bla bla bla', '2017-04-10', NULL, 'CaptainFire03', 'dofus_test.jpg'),
+(26, 'La boutique', '<p>La boutique &agrave; &eacute;tait mise &agrave; jours.</p>\r\n\r\n<p>N&#39;h&eacute;sitez pas &agrave; aller la consult&eacute; sur le site internet de Dofus</p>\r\n\r\n<p><a href="https://secure.dofus.com/fr/boutique">Dofus Boutique</a></p>\r\n', '2017-04-11', NULL, 'CaptainFire03', 'actu2.jpg');
 
 -- --------------------------------------------------------
 
@@ -83,6 +84,30 @@ CREATE TABLE `commentaires` (
   `articles_id` int(11) NOT NULL,
   `auteurCommentaire` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `images`
+--
+
+CREATE TABLE `images` (
+  `id` int(11) NOT NULL,
+  `images` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `images`
+--
+
+INSERT INTO `images` (`id`, `images`) VALUES
+(1, 'profil1'),
+(2, 'profil2'),
+(3, 'profil3'),
+(4, 'profil4'),
+(5, 'profil5'),
+(6, 'profil6'),
+(7, 'profil7');
 
 -- --------------------------------------------------------
 
@@ -152,6 +177,7 @@ CREATE TABLE `users` (
   `mail` varchar(100) NOT NULL,
   `date_inscription` date NOT NULL,
   `membre_rang` enum('visiteur','inscrit','modo','admin') DEFAULT 'inscrit',
+  `image` varchar(255) NOT NULL,
   `message` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -159,10 +185,10 @@ CREATE TABLE `users` (
 -- Contenu de la table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `password`, `date_de_naissance`, `mail`, `date_inscription`, `membre_rang`, `message`) VALUES
-(1, 'CaptainFire03', 'c955a0060768c59720af5c02a18797717a4aeda1', '1995-10-19', 'thomas.face03@gmail.com', '2017-04-10', 'admin', 0),
-(2, 'Seizuko', 'f8728f2c3d5b7e7529ebeadc434d5db085fa47ee', '1995-03-22', '', '2017-04-10', 'admin', 0),
-(4, 'TestAdmin', '98aadb37083eddd855c27feccb15dc8c5b127fd0', '1995-10-19', '', '2017-04-10', 'inscrit', 0);
+INSERT INTO `users` (`id`, `name`, `password`, `date_de_naissance`, `mail`, `date_inscription`, `membre_rang`, `image`, `message`) VALUES
+(1, 'CaptainFire03', 'c955a0060768c59720af5c02a18797717a4aeda1', '1995-10-19', 'thomas.face03@gmail.com', '2017-04-10', 'admin', 'profil5', 0),
+(2, 'Seizuko', 'f8728f2c3d5b7e7529ebeadc434d5db085fa47ee', '1995-03-22', '', '2017-04-10', 'admin', '', 0),
+(4, 'TestAdmin', '98aadb37083eddd855c27feccb15dc8c5b127fd0', '1995-10-19', '', '2017-04-10', 'inscrit', '', 0);
 
 --
 -- Index pour les tables exportées
@@ -184,6 +210,12 @@ ALTER TABLE `categories`
 -- Index pour la table `commentaires`
 --
 ALTER TABLE `commentaires`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `images`
+--
+ALTER TABLE `images`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -218,7 +250,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `articles`
 --
 ALTER TABLE `articles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 --
 -- AUTO_INCREMENT pour la table `categories`
 --
@@ -229,6 +261,11 @@ ALTER TABLE `categories`
 --
 ALTER TABLE `commentaires`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT pour la table `images`
+--
+ALTER TABLE `images`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT pour la table `membreRang`
 --
@@ -248,7 +285,7 @@ ALTER TABLE `sujets`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
