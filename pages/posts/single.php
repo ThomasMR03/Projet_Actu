@@ -22,6 +22,8 @@
 	}
 	$lastCom = $app->getTable('commentaire')->lastByCommentaire($_GET['id']);
 	$app->titre = $post->titre;
+
+	$utilisateurs = App::getInstance()->getTable('User')->find($_SESSION['Id']);
 ?>
 
 <div class="col-md-1"></div>
@@ -42,6 +44,9 @@
 	<?php foreach ($lastCom as $last) : ?>
 	<span>
 	<div class="commentairePersonne">
+	<div class="col-md-1" id="imageProfilPerso" style="margin-right: 10px;">
+	<img src="img/imageProfil/<?= $utilisateurs->image ?>">
+	</div>
 	<h5><?= $last->auteurCommentaire ?></h5>
 	<p><?= $last->commentaire ?></p>
 	</div>
@@ -63,7 +68,7 @@
 				</form>
 		</div>
         <?php else : ?>
-          <!-- Afficher redirection vers login -->
+          	<p style="color: white">Je vous invite à vous connecter, si vous voulez poster un commentaire. <a href="index.php?p=Login">>> Connexion <<</a></p>
         <?php endif; ?>
 </div>
 
