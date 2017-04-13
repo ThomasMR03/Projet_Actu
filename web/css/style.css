@@ -339,3 +339,5 @@ footer{width: 100%; height: 200px; margin-top: 50px; background-color: rgba(0,0,
 .formPasswordHidden{height: 0px;}
 .formPasswordCache{animation-name: formPasswordHidden; animation-duration: .5s; animation-fill-mode: forwards;}
 .formPasswordVisible{animation-name: formPasswordVisible; animation-duration: .5s; animation-fill-mode: forwards; animation-timing-function: linear;}
+
+#imageNav{border-radius: 200px; width: 40px; margin-top: -15px; margin-bottom: -15px; margin-right: 10px;}
