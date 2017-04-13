@@ -41,13 +41,13 @@ if ($req) {
 
 		<div class="col-md-9">
 			<h1 id="pseudo">Bienvenue <?= $utilisateurs->name  ?></h1>
-			<h6>Date d'inscription : <?= $utilisateurs->date_inscription  ?></h6>
+			<h6>Date d'inscription : <?= $utilisateurs->date_inscription_fr  ?></h6>
 		</div>
 
 
 		<div class="col-md-12">
 			<h6>Vous êtes : <?= $utilisateurs->membre_rang  ?></h6>
-			<h6>Date de naissance : <?= $utilisateurs->date_de_naissance  ?></h6>
+			<h6>Date de naissance : <?= $utilisateurs->date_naissance_fr  ?></h6>
 			<h6>Adresse mail : <?= $utilisateurs->mail  ?></h6>
 		</div>
 	</div>
