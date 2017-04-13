@@ -42,6 +42,8 @@ if ($page==='home') {
 	require ROOT.'/pages/admin/users/delete.php';
 }elseif ($page==='users.index') {
 	require ROOT.'/pages/admin/users/index.php';
+}elseif ($page==='users.image') {
+	require ROOT.'/pages/admin/users/image.php';
 
 }elseif ($page==='posts.edit'){
 	require ROOT.'/pages/admin/posts/index.php';
