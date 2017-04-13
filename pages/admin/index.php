@@ -62,6 +62,13 @@
 					<a href="admin.php?p=users.index" id="buttonAction">Let's go !</a>
 				</td>
 			</tr>
+
+			<tr>
+				<td><p class="action">Ajouter une nouvelle photo de profil</p></td>
+				<td style="padding: 30px; border: none;">
+					<a href="admin.php?p=users.image" id="buttonAction">Let's go !</a>
+				</td>
+			</tr>
 		</tbody>
 	</table>
 </div>
