@@ -135,7 +135,7 @@ function formPassword() {
   if ($("#formPassword").hasClass( "formPasswordHidden" )) {
     $("#formPassword").attr('class','formPasswordVisible');
   }else if ($( "#formPassword" ).hasClass( "formPasswordCache" )){
-    $("#formPassword").attr('class','formImagevisible');
+    $("#formPassword").attr('class','formPasswordVisible');
   }else{
     $("#formPassword").attr('class','formPasswordCache');
   }
