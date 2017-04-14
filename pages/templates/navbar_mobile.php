@@ -8,7 +8,7 @@
 <div  id="navmobile" class="hidden">
     <div class="row">
     <?php if(isset($_SESSION['Auth'])): ?> <!-- Si connecté affiche Bonjour Pseudo, sinon affiche Visiteur -->
-        <p class="col-xs-12 col-sm-12 liens" style="font-size: 1em; background-color:rgb(199,211,29);padding-top: 10px; padding-bottom: 10px;">Bonjour <?= $_SESSION['Auth']; ?></p>
+        <p class="col-xs-12 col-sm-12 liens" style="font-size: 1em; background-color:rgb(199,211,29);padding-top: 10px; padding-bottom: 10px;"><img src="img/imageProfil/<?= $utilisateurs->image?>.png" id="imageNav"> Bonjour <?= $_SESSION['Auth']; ?></p>
         <?php else : ?>
           <p class="col-xs-12 col-sm-12 liens"  style="font-size: 1em; background-color:rgb(199,211,29);padding-top: 10px; padding-bottom: 10px;"> Vous n'êtes pas connécté</p>
           <a href="index.php?p=utilisateurs" class="col-xs-12 col-sm-12 liens" style="padding: 0;">Inscription</a>  

@@ -1,6 +1,10 @@
 <?php
 $date = date("d-m-Y");
+
+if(isset($_SESSION['Auth'])){
 $utilisateurs = App::getInstance()->getTable('User')->find($_SESSION['Id']);
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
