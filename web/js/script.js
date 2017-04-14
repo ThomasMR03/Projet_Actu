@@ -141,7 +141,7 @@ function verifForm(f)
 
 function formMail() {
   if ($("#formMail").hasClass( "formMailHidden" )) {
-    $("#formMail").attr('class','formMailvisible');
+    $("#formMail").attr('class','formMailVisible');
   }else if ($( "#formMail" ).hasClass( "formMailCache" )){
     $("#formMail").attr('class','formMailVisible');
   }else{
@@ -151,9 +151,9 @@ function formMail() {
 
 function formImage() {
   if ($("#formImage").hasClass( "formImageHidden" )) {
-    $("#formImage").attr('class','formImagevisible');
+    $("#formImage").attr('class','formImageVisible');
   }else if ($( "#formImage" ).hasClass( "formImageCache" )){
-    $("#formImage").attr('class','formImagevisible');
+    $("#formImage").attr('class','formImageVisible');
   }else{
     $("#formImage").attr('class','formImageCache');
   }
