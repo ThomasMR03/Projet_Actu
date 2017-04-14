@@ -52,14 +52,14 @@ if ($req) {
 			<button onclick="formImage()" id="buttonFormImage">Modifier mon image</button>
 			<form action="" method="post" name="formulaire" id="formImage" class="formImageHidden">
 				<?php foreach (App::getInstance()->getTable('Image')->all() as $image) : ?>
-					<input name="image" type="image" value="<?= $image->images ?>" id="profil1" src="img/imageProfil/<?= $image->images ?>.png" width="32%">
+					<input name="image" type="image" value="<?= $image->images ?>" id="profil1" src="img/imageProfil/<?= $image->images ?>.png" width="30%">
 				<?php endforeach ?>
 
 				<?php if($_SESSION['Auth'] == 'Seizuko'): ?>
-					<input name="image" type="image" value="seizuko" id="profil1" src="img/imageProfil/seizuko.png" width="32%">
+					<input name="image" type="image" value="seizuko" id="profil1" src="img/imageProfil/seizuko.png" width="30%">
 				<?php endif; ?>
 				<?php if($_SESSION['Auth'] == 'CaptainFire03'): ?>
-					<input name="image" type="image" value="Captainfire03" id="profil1" src="img/imageProfil/Captainfire03.png" width="32%">
+					<input name="image" type="image" value="Captainfire03" id="profil1" src="img/imageProfil/Captainfire03.png" width="30%">
 				<?php endif; ?>
 			</form>
 		</div>
