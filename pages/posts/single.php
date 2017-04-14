@@ -24,7 +24,9 @@
 	$lastCom = $app->getTable('commentaire')->lastByCommentaire($_GET['id']);
 	$app->titre = $post->titre;
 
+if(isset($_SESSION['Auth'])){
 	$utilisateurs = App::getInstance()->getTable('User')->find($_SESSION['Id']);
+}
 ?>
 
 <div class="col-md-1"></div>
