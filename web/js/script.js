@@ -25,7 +25,7 @@ $('#actuu').easyPaginate({
 
 
 
-
+// scroll pagination //
 
 $('.scroll').on('click', function() {
   $.smoothScroll({
@@ -34,7 +34,36 @@ $('.scroll').on('click', function() {
   return false;
 });
 
+// scroll haut de page //
 
+$('#scrollUp').on('click', function() {
+  $.smoothScroll({
+    scrollTarget: 'body'
+  });
+  return false;
+});
+
+
+
+
+
+window.addEventListener('scroll', function(ev) {
+
+   var top = document.getElementById('iamtop');
+   var someDiv = document.getElementById('iamtop');
+   var distanceToTop = someDiv.getBoundingClientRect().top;
+   var distanceMax = -200;
+
+   if (distanceToTop < distanceMax) {
+      $("#scrollUp").attr('class','fixedTop');
+   }else{
+      $("#scrollUp").attr('class','hidden');
+   }
+
+   console.log(distanceToTop);
+});
+
+// fin scroll haut de page//
 
 function verifPseudo(champ)
 {
