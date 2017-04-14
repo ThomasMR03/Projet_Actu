@@ -22,6 +22,7 @@
 		$app->notFound();
 	}
 	$lastCom = $app->getTable('commentaire')->lastByCommentaire($_GET['id']);
+	$delCom = $app->getTable('commentaire')->all();
 	$app->titre = $post->titre;
 
 if(isset($_SESSION['Auth'])){
@@ -45,6 +46,7 @@ if(isset($_SESSION['Auth'])){
 
 	<div id="commentaire">
 	<span>
+
 	<?php foreach ($lastCom as $last) : ?>
 	<div class="commentairePersonne">
 	<div class="col-md-1" id="imageProfilPerso" style="margin-right: 10px;">
@@ -52,11 +54,11 @@ if(isset($_SESSION['Auth'])){
 	</div>
 	<h5><?= $last->auteurCommentaire ?></h5>
 	<p><?= $last->commentaire ?></p>
-	<form action="index.php?p=commentaire.delete" method="post">
-		<button class="btn btn-danger" type="submit" value="<?=$last->id?>" name="id">DELETE</button>
-	</form>
 	</div>
 	</span>
+	<form action="index.php?p=commentaire.delete" method="post">
+		<button class="btn btn-danger" type="submit" value="<?=$last->commentaires_id?>" name="id">DELETE</button>
+	</form>
 	<?php endforeach; ?>
 	</div>
 	</div>
