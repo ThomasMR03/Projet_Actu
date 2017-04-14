@@ -85,7 +85,40 @@ $utilisateurs = App::getInstance()->getTable('User')->find($_SESSION['Id']);
   </div><!-- /.container -->
 
 
-<footer></footer>
+<footer>
+  <div class="row">
+    <div class="col-md-5" id="footerArticle">
+      <h6>Articles récent</h6>
+      <div class="row">
+          <?php foreach (App::getInstance()->getTable('post')->lastRecent() as $post) : ?>
+            <div class="col-md-6">
+              <a href="<?= $post->Url ?>" id="titreFooter"><?= $post->titre ?></a>
+              <div class="extraitFooter"><p><?= $post->extrait ?></p></div>
+            </div>
+          <?php endforeach; ?>
+      </div>
+    </div>
+
+    <div class="col-md-3" id="footerNavigation">
+      <h6>Navigation</h6>
+      <a href="index.php">Accueil</a><br>
+      <?php if(isset($_SESSION['Auth'])): ?>
+        <a href="index.php?p=utilisateurs.profil&name=<?= $_SESSION['Auth'] ?>">Mon Compte</a><br>
+        <?php else : ?>
+          <a href="index.php?p=utilisateurs">S'inscrire</a><br>
+        <?php endif; ?>
+        <a href="index.php?p=<?=$connect ?>"><?= $connect ?></a>
+    </div>
+
+    <div class="col-md-4" id="footerAPropos">
+      <h6>A propos</h6>
+    </div>
+
+    <div class="col-md-12" id="footerMentions">
+      <p>Mentions légales ------------</p>
+    </div>
+  </div>  
+</footer>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -99,27 +132,6 @@ $utilisateurs = App::getInstance()->getTable('User')->find($_SESSION['Id']);
 
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
 <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
-<script>
-window.addEventListener("load", function(){
-window.cookieconsent.initialise({
-  "palette": {
-    "popup": {
-      "background": "#efefef",
-      "text": "#404040"
-    },
-    "button": {
-      "background": "#8ec760",
-      "text": "#ffffff"
-    }
-  },
-  "theme": "edgeless",
-  "content": {
-    "message": "Roubl'Actu utilise un cookies pour que vous puissiez rester connecté.",
-    "dismiss": "J’accepte !",
-    "link": "En savoir plus"
-  }
-})});
-</script>
 
 </body>
                 <!-- SCRIPTS LOADS -->
