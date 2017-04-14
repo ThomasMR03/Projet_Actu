@@ -341,3 +341,13 @@ footer{width: 100%; height: 200px; margin-top: 50px; background-color: rgba(0,0,
 .formPasswordVisible{animation-name: formPasswordVisible; animation-duration: .5s; animation-fill-mode: forwards; animation-timing-function: linear;}
 
 #imageNav{border-radius: 0px; width: 40px; margin-top: -15px; margin-bottom: -15px; margin-right: 10px;}
+
+
+/* CSS boutton scroll haut de pagge */
+
+#scrollUpa{position: absolute; left: -10px; bottom: 100px;}
+.fixedTop{position: fixed; right: 0px; bottom: 200px;}
+
+@media screen and (max-width: 768px){
+	#scrollUp{width: 60px;height: 70px; bottom: 15px; z-index: 1; background-color: rgba(0,0,0,0.7);border: 2px solid rgb(199,211,29); }
+}
