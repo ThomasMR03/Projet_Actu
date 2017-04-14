@@ -49,9 +49,14 @@ if(isset($_SESSION['Auth'])){
 
 	<?php foreach ($lastCom as $last) : ?>
 	<div class="commentairePersonne">
+	<?php if(isset($_SESSION['Auth'])): ?> <!-- Si connecté Admin affiche Panel Admin, sinon affiche rien -->
+          <?php if($utilisateurs->membre_rang == 'admin'): ?>
 	<form action="index.php?p=commentaire.delete" method="post" class="formComDelete">
 		<button class="buttonComDelete" type="submit" value="<?=$last->commentaires_id?>" name="id">X</button>
 	</form>
+	<?php else : ?><?php endif; ?>
+       <?php else : ?>
+       <?php endif; ?>
 	<div class="col-md-1" id="imageProfilPerso" style="margin-right: 10px;">
 	<img src="img/imageProfil/<?= $last->image ?>.png">
 	</div>
