@@ -60,7 +60,6 @@ window.addEventListener('scroll', function(ev) {
       $("#scrollUp").attr('class','hidden');
    }
 
-   console.log(distanceToTop);
 });
 
 // fin scroll haut de page//
