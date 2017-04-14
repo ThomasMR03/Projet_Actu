@@ -49,6 +49,9 @@ if(isset($_SESSION['Auth'])){
 
 	<?php foreach ($lastCom as $last) : ?>
 	<div class="commentairePersonne">
+	<form action="index.php?p=commentaire.delete" method="post" class="formComDelete">
+		<button class="buttonComDelete" type="submit" value="<?=$last->commentaires_id?>" name="id">X</button>
+	</form>
 	<div class="col-md-1" id="imageProfilPerso" style="margin-right: 10px;">
 	<img src="img/imageProfil/<?= $last->image ?>.png">
 	</div>
@@ -56,9 +59,7 @@ if(isset($_SESSION['Auth'])){
 	<p><?= $last->commentaire ?></p>
 	</div>
 	</span>
-	<form action="index.php?p=commentaire.delete" method="post">
-		<button class="btn btn-danger" type="submit" value="<?=$last->commentaires_id?>" name="id">DELETE</button>
-	</form>
+	
 	<?php endforeach; ?>
 	</div>
 	</div>
