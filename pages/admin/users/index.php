@@ -14,6 +14,7 @@ $utilisateurs = App::getInstance()->getTable('User')->all();
  <table class="table">
 	<thead>
 		<tr>
+			<th class="description" style="text-align: center;">Photo de Profil</th>
 			<th class="description" style="text-align: center;">Pseudo</th>
 			<th class="description" style="text-align: center;">Age</th>
 			<th class="description" style="text-align: center;">Date de Naissance</th>
@@ -25,6 +26,7 @@ $utilisateurs = App::getInstance()->getTable('User')->all();
 	<tbody>
 		<?php foreach ($utilisateurs as $utilisateur): ?>
 			<tr>
+				<td><img style="width: 50px;" src="img/imageProfil/<?= $utilisateur->image ?>.png"></td>
 				<td><?= $utilisateur->name ?></td>
 				<td><?= $utilisateur->age ?></td>
 				<td><?= $utilisateur->date_de_naissance ?></td>
