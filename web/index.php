@@ -24,6 +24,8 @@ if ($page==='home') {
 	require ROOT.'/pages/posts/home.php';
 }elseif ($page==='posts.single') {
 	require ROOT.'/pages/posts/single.php';
+}elseif ($page==='commentaire.delete') {
+	require ROOT.'/pages/posts/deleteCom.php';
 
 }elseif ($page==='utilisateurs') {
 	require ROOT.'/pages/utilisateurs/register.php';
