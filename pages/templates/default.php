@@ -31,7 +31,7 @@ $utilisateurs = App::getInstance()->getTable('User')->find($_SESSION['Id']);
 
 
 
-<a href="#"  id="scrollUpa"><img src="img/remonter.png" width="80" id="scrollUp" ></a>
+<a href="#"  id="scrollUpa"><img src="img/remonter.png" width="80" id="scrollUp" class="hidden" ></a>
 
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
