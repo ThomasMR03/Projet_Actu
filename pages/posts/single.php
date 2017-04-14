@@ -86,6 +86,7 @@ if(isset($_SESSION['Auth'])){
 		</div>
         <?php else : ?>
           	<p style="color: white">Je vous invite à vous connecter, si vous voulez poster un commentaire. <a href="index.php?p=Login">>> Connexion <<</a></p>
+          	<p style="color: white">Si vous n'êtes pas inscrit, je vous invite à le faire ici <a href="index.php?p=utilisateurs">>> Inscription <<</a></p>
         <?php endif; ?>
 </div>
 
