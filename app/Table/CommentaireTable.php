@@ -11,7 +11,12 @@ class CommentaireTable extends Table
 
 	public function lastByCommentaire($category_id, $one=false)
 	{
-		return $this->query(" SELECT *
+		return $this->query(" SELECT commentaires.id AS commentaires_id,
+									commentaires.commentaire,
+									commentaires.articles_id,
+									commentaires.auteurCommentaire,
+									commentaires.users_id,
+									users.image
 								FROM commentaires
 								LEFT JOIN articles
 									ON articles_id = articles.id
