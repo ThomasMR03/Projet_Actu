@@ -44,14 +44,17 @@ if(isset($_SESSION['Auth'])){
 	<h4>Commentaire(s) :</h4>
 
 	<div id="commentaire">
-	<?php foreach ($lastCom as $last) : ?>
 	<span>
+	<?php foreach ($lastCom as $last) : ?>
 	<div class="commentairePersonne">
 	<div class="col-md-1" id="imageProfilPerso" style="margin-right: 10px;">
 	<img src="img/imageProfil/<?= $last->image ?>.png">
 	</div>
 	<h5><?= $last->auteurCommentaire ?></h5>
 	<p><?= $last->commentaire ?></p>
+	<form action="index.php?p=commentaire.delete" method="post">
+		<button class="btn btn-danger" type="submit" value="<?=$last->id?>" name="id">DELETE</button>
+	</form>
 	</div>
 	</span>
 	<?php endforeach; ?>
