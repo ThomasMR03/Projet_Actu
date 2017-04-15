@@ -3,11 +3,6 @@
 <?php else : header('location: index.php'); ?>
 <?php endif; ?>
 
-
-
-
-
-
 <div class="row" style="width: 99%">
 <div class="col-md-2"></div>
 
