@@ -38,10 +38,10 @@
 			</div></a>
 		<?php endforeach; ?>
 		<p style="border-top: 3px solid rgb(199,211,29);"></p>
-		<h3 class="actu">Nos 5 derniers membres inscrits</h3>
-		<h5 style="color: white;">Merci à vous !</h5>
+		<h3 class="actu">Membres Récents Inscrit</h3>
 		<?php foreach (App::getInstance()->getTable('User')->lastUser() as $last) : ?>
 			<h5 style="color: white; border-left: 2px solid rgb(199,211,29); border-right: 2px solid rgb(199,211,29);"><?= $last->name ?></h5>
 		<?php endforeach; ?>
+		<h5 style="color: white; border: 2px solid rgb(199,211,29);">Merci à vous !</h5>
 	</div>
 </div>
