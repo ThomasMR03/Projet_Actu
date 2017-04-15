@@ -32,7 +32,7 @@
 </div>
 <div class="col-md-8" id="zoneAdmin">
 <h2 id="modif_article" style="font-size: 2.5em; margin-bottom: 50px; border-bottom:6px solid  rgb(199,211,29); padding-bottom: 20px;">Modifier le commentaire</h2>
-<form method="post" action="index.php?p=posts.single&id=<?= $post->id; ?>">
+<form method="post" action="">
 	<input type="hidden" name="id" value="<?= $post->id; ?>">
 	<textarea class="form-control" name="commentaire"  style="margin-bottom: 20px; height: 400px;" id="editor1"><?= $post->commentaire; ?></textarea>
 	<script>
