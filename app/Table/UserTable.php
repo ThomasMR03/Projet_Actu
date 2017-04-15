@@ -8,18 +8,6 @@ use Core\Table\Table;
 */
 class UserTable extends Table
 {
-
-	public function register()
-	{
-		return $this->query(" INSERT users.id,
-									 users.name
-									 users.password
-									 users.mail
-									 users.date_inscription
-									 users.date_de_naissance
-							  FROM   users");
-	}
-
 	public function find($id)
 	{
 		return $this->query("SELECT users.id,
@@ -31,5 +19,10 @@ class UserTable extends Table
 									 users.membre_rang,
 									 users.image
 									 FROM users WHERE id = ?",[$id], true);
+	}
+
+	public function lastUser()
+	{
+		return $this->query("SELECT * FROM users ORDER BY users.id DESC LIMIT 0, 5");
 	}
 }
