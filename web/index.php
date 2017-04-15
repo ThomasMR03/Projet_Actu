@@ -26,6 +26,8 @@ if ($page==='home') {
 	require ROOT.'/pages/posts/single.php';
 }elseif ($page==='commentaire.delete') {
 	require ROOT.'/pages/posts/deleteCom.php';
+}elseif ($page==='commentaire.edit') {
+	require ROOT.'/pages/posts/editCom.php';
 
 }elseif ($page==='utilisateurs') {
 	require ROOT.'/pages/utilisateurs/register.php';
