@@ -28,7 +28,9 @@
 		</div>
 	</div>
 	<div class="col-md-1"></div>
-	<div class="col-md-2" id="colonneGauche">
+
+	<div class="col-md-2" style="padding: 0;">
+	<div id="colonneGauche">
 		<h3 class="actu">Articles récents</h3>
 		<?php foreach (App::getInstance()->getTable('post')->lastRecent() as $post) : ?>
 			<a href="<?= $post->Url ?>"><div class="fondRecent">
@@ -37,11 +39,14 @@
 				<p>Article posté par <?= $post->auteur ?> <br> Le <?= $post->date_creation_fr ?></p>
 			</div></a>
 		<?php endforeach; ?>
-		<p style="border-top: 3px solid rgb(199,211,29);"></p>
-		<h3 class="actu">Membres Récents Inscrit</h3>
+	</div>
+	<div id="colonneGauche" style="margin-top: 15px;">
+		<h3 class="actu" style="margin-bottom: 0px;">Inscriptions récentes</h3>
 		<?php foreach (App::getInstance()->getTable('User')->lastUser() as $last) : ?>
-			<h5 style="color: white; border-left: 2px solid rgb(199,211,29); border-right: 2px solid rgb(199,211,29);"><?= $last->name ?></h5>
+			<h5 id="pseudoRecentInscrit"><?= $last->name ?></h5>
 		<?php endforeach; ?>
-		<h5 style="color: white; border: 2px solid rgb(199,211,29);">Merci à vous !</h5>
+		<h5 id="merci">Merci à vous !</h5>
+	</div>
+
 	</div>
 </div>

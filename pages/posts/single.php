@@ -92,15 +92,25 @@ if(isset($_SESSION['Auth'])){
 </div>
 
 <div class="col-md-1"></div>
-	<div class="col-md-2" id="colonneGauche">
+	<div class="col-md-2" style="padding: 0;">
+	<div id="colonneGauche">
 		<h3 class="actu">Articles récents</h3>
 		<?php foreach (App::getInstance()->getTable('post')->lastRecent() as $post) : ?>
-			<div class="fondRecent">
+			<a href="<?= $post->Url ?>"><div class="fondRecent">
 				<h5><a href="<?= $post->Url ?>"> <?= $post->titre ?> </a></h5>
 				<div class="imageArticleRecent"><img src="img/<?=$post->img?>"></div>
 				<p>Article posté par <?= $post->auteur ?> <br> Le <?= $post->date_creation_fr ?></p>
-			</div>
+			</div></a>
 		<?php endforeach; ?>
+	</div>
+	<div id="colonneGauche" style="margin-top: 15px;">
+		<h3 class="actu" style="margin-bottom: 0px;">Inscriptions récentes</h3>
+		<?php foreach (App::getInstance()->getTable('User')->lastUser() as $last) : ?>
+			<h5 id="pseudoRecentInscrit"><?= $last->name ?></h5>
+		<?php endforeach; ?>
+		<h5 id="merci">Merci à vous !</h5>
+	</div>
+
 	</div>
 
 	
