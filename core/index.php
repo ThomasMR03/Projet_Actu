@@ -1,0 +1,1 @@
+<?php header('http://www.google.com') ?>
