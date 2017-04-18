@@ -51,7 +51,7 @@ if(isset($_SESSION['Auth'])){
 	<div class="commentairePersonne">
 	<?php if(isset($_SESSION['Auth'])): ?> <!-- Si connecté Admin affiche Panel Admin, sinon affiche rien -->
           <?php if($utilisateurs->membre_rang == 'admin'): ?>
-    <a href="index.php?p=commentaire.edit&id=<?=$last->commentaires_id;?>" ><button class="glyphicon glyphicon-pencil buttonComDelete"> Edition</button></a>
+    <a href="index.php?p=commentaire.edit&id=<?=$last->commentaires_id;?>" ><button class="buttonComDelete" style="float: right; margin-left:5px; ">Edit</button></a>
 	<form action="index.php?p=commentaire.delete" method="post" class="formComDelete">
 		<button class="buttonComDelete" type="submit" value="<?=$last->commentaires_id?>" name="id">X</button>
 	</form>
