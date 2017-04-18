@@ -88,10 +88,10 @@ $utilisateurs = App::getInstance()->getTable('User')->find($_SESSION['Id']);
 <footer>
   <div class="row">
     <div class="col-md-5" id="footerArticle">
-      <h6>Articles récent</h6>
+      <h6 style="text-align: center;">Articles récent</h6>
       <div class="row">
           <?php foreach (App::getInstance()->getTable('post')->lastRecent() as $post) : ?>
-            <div class="col-md-6">
+            <div class="col-md-6 col-xs-6 col-sm-6">
               <a href="<?= $post->Url ?>" id="titreFooter"><?= $post->titre ?></a>
               <div class="extraitFooter"><p><?= $post->extrait ?></p></div>
             </div>
@@ -112,10 +112,11 @@ $utilisateurs = App::getInstance()->getTable('User')->find($_SESSION['Id']);
 
     <div class="col-md-4" id="footerAPropos">
       <h6>A propos</h6>
+
     </div>
 
     <div class="col-md-12" id="footerMentions">
-      <p>Mentions légales ------------</p>
+      <p>Mentions légales: Thème, design et code réalisés par CaptainFire03 et Seizuko. ©2017 Roubl'Actu.</p>
     </div>
   </div>  
 </footer>
