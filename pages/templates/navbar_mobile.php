@@ -1,24 +1,25 @@
 
 <!-- NAVBAR MOBILE UNIQUEMENT ! -->
 <nav id="mobileNav" class="row" style="padding-top:10px;">
-  <img src="img/logoNav.png" height="40" style="margin-top: -8px; margin-left: 5px;">
+  <a href="index.php"><img src="img/logoNav.png" height="40" style="margin-top: -8px; margin-left: 5px;"></a>
   <img onclick="navMobile()" id="mobileButton" src="img/menu.png">
 </nav>
 
 <div  id="navmobile" class="hidden">
-    <div class="row">
-    <?php if(isset($_SESSION['Auth'])): ?> <!-- Si connecté affiche Bonjour Pseudo, sinon affiche Visiteur -->
-        <p class="col-xs-12 col-sm-12 liens" style="font-size: 1em; background-color:rgb(199,211,29);padding-top: 10px; padding-bottom: 10px;"><img src="img/imageProfil/<?= $utilisateurs->image?>.png" id="imageNav"> Bonjour <?= $_SESSION['Auth']; ?></p>
+   <div class="row" id="rowMobile">
+       <?php if(isset($_SESSION['Auth'])): ?> <!-- Si connecté affiche Bonjour Pseudo, sinon affiche Visiteur -->
+        <div class="col-xs-12 col-sm-12" id="pseudoNavMobile"><img src="img/imageProfil/<?= $utilisateurs->image?>.png" id="imageNav"> Bonjour <?= $_SESSION['Auth']; ?></div>
+        <div class="col-xs-6 col-sm-6"><a href="index.php?p=utilisateurs.profil&name=<?= $_SESSION['Auth'] ?>">Mon Compte</a></div>
         <?php else : ?>
-          <p class="col-xs-12 col-sm-12 liens"  style="font-size: 1em; background-color:rgb(199,211,29);padding-top: 10px; padding-bottom: 10px;"> Vous n'êtes pas connécté</p>
-          <a href="index.php?p=utilisateurs" class="col-xs-12 col-sm-12 liens" style="padding: 0;">Inscription</a>  
+          <div class="col-xs-12 col-sm-12" id="pseudoNavMobile"> Vous n'êtes pas connecté</div>
+          <div class="col-xs-6 col-sm-6"><a href="index.php?p=utilisateurs"><span class="glyphicon glyphicon-user"></span> S'inscrire</a></div>
         <?php endif; ?>
-      <a href="index.php?p=<?=$connect ?>" class="col-xs-12 col-sm-12 liens"  style="padding: 0; border: none;"><?= $connect ?></a>
-    <img src="img/roublard.png" width="90%;" style="margin:10px;">
-       
 
-      <a href="index.php" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 liensNav">Accueil</a>
-    </div>
+        <div class="col-xs-6 col-sm-6"><a href="index.php?p=<?=$connect ?>"><span class="glyphicon glyphicon-log-in"></span>  <?= $connect ?></a></div>
+   </div>
+   <div class="row">
+      <div class="col-xs-12 col-sm-12"><a href="index.php" id="liensNavMobile">Accueil</a></div>
+   </div>
 </div>
 
 
