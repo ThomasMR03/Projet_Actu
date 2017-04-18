@@ -1,4 +1,6 @@
 <?php
+
+
 $date = date('Y-m-d');
 
 if (!empty($_POST)) {
@@ -15,7 +17,7 @@ if (isset($_POST['name'], $_POST['password'], $_POST['password_confirm'], $_POST
  	$req=App::getInstance()->getTable('User')->create([
 
  	'name' => htmlspecialchars($_POST['name']),
- 	'password' => sha1((htmlspecialchars($_POST['password']))),
+ 	'password' => sha1((htmlspecialchars(PREFIX_SALT.$_POST['password'].SUFFIX_SALT))),
  	'mail' => htmlspecialchars($_POST['mail']),
  	'date_inscription' => htmlspecialchars($_POST['date_inscription']),
  	'date_de_naissance' => htmlspecialchars($_POST['date_de_naissance'])]);
@@ -55,3 +57,5 @@ if (isset($_POST['name'], $_POST['password'], $_POST['password_confirm'], $_POST
  </div>
 
  </div>
+
+

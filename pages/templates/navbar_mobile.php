@@ -2,7 +2,7 @@
 <!-- NAVBAR MOBILE UNIQUEMENT ! -->
 <nav id="mobileNav" class="row" style="padding-top:10px;">
   <a href="index.php"><img src="img/logoNav.png" height="40" style="margin-top: -8px; margin-left: 5px;"></a>
-  <img onclick="navMobile()" id="mobileButton" src="img/menu.png">
+  <img onclick="navMobile()" id="mobileButton" src="img/menu.png" width="10">
 </nav>
 
 <div  id="navmobile" class="hidden">
