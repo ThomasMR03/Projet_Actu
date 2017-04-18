@@ -117,7 +117,7 @@ $utilisateurs = App::getInstance()->getTable('User')->find($_SESSION['Id']);
     </div>
 
     <div class="col-md-12" id="footerMentions">
-      <p>Mentions légales: Thème, design et code réalisés par CaptainFire03 et Seizuko. ©2017 Roubl'Actu.</p>
+      <p>Thème, design et code réalisés par CaptainFire03 et Seizuko. ©2017 Roubl'Actu.</p>
     </div>
   </div>  
 </footer>
