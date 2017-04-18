@@ -40,7 +40,7 @@ margin: 0; padding: 0;}
 	100%{margin-left: -70%; border-right: 0px solid rgb(199,211,29);}
 }
 #mobileNav{position:fixed; width:100% !important; height: 50px; background-color: rgba(0,0,0,0.9);top: 0px; left: 0px; color: white; visibility: visible; padding: 0; margin:0; font-size: 18px;  display: block; z-index: 999;}
-#mobileButton{position: absolute;right: 5px;color: white; height: 35px; width: 45px !important; z-index: 10001; visibility: visible; width: 80px; font-size: 35px; top: 7px; text-decoration: none;}
+#mobileButton{position: absolute;right: 10px;color: white; height: 30px; width: 35px !important; z-index: 10001; visibility: visible; width: 80px; font-size: 35px; top: 10px; text-decoration: none;}
 #navmobile{position: fixed;top: 0; left: 0;height: 100%; width: 70%; background-color: rgba(0,0,0,1); z-index: 1000; overflow: hidden; text-align: center;visibility: visible;overflow: hidden; border-right: 0px solid rgb(199,211,29);}
 .hidden{width: 70%; margin-left: -70%}
 .cache{animation-name: pageMobileHidden; animation-duration: .5s; animation-fill-mode: forwards;}
