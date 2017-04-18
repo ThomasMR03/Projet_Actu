@@ -111,7 +111,8 @@ $utilisateurs = App::getInstance()->getTable('User')->find($_SESSION['Id']);
     </div>
 
     <div class="col-md-4" id="footerAPropos">
-      <h6>A propos</h6>
+      <h6>Dofus</h6>
+      <p style="color: white; text-align: center;">Dofus est un MMORPG édité par Ankama."Roubl'Actu" est un site non-officiel sans aucun lien avec Ankama.<br> Toutes les illustrations sont la propriété d'Ankama Studio et de Dofus - Tous droits réservés</p>
 
     </div>
 
